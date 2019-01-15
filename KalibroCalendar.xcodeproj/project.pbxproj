@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F2D9E3321ED15F400AD7F94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3221ED15F400AD7F94 /* main.m */; };
+		7F2D9E3621ED15F400AD7F94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3521ED15F400AD7F94 /* AppDelegate.m */; };
+		7F2D9E3921ED15F400AD7F94 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3821ED15F400AD7F94 /* ViewController.m */; };
+		7F2D9E3C21ED15F400AD7F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3A21ED15F400AD7F94 /* Main.storyboard */; };
+		7F2D9E3E21ED15F400AD7F94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3D21ED15F400AD7F94 /* Assets.xcassets */; };
+		7F2D9E4121ED15F400AD7F94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3F21ED15F400AD7F94 /* LaunchScreen.storyboard */; };
+		7F2D9E4C21ED15F400AD7F94 /* KalibroCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E4B21ED15F400AD7F94 /* KalibroCalendarTests.m */; };
+		7F2D9E5721ED15F400AD7F94 /* KalibroCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E5621ED15F400AD7F94 /* KalibroCalendarUITests.m */; };
+		7F66886721ED210A00DE3080 /* CalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F66886621ED210A00DE3080 /* CalendarController.m */; };
+		7F66886A21ED23FA00DE3080 /* CustomCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F66886921ED23FA00DE3080 /* CustomCalendar.m */; };
+		7F66886D21ED3C5700DE3080 /* SF-Pro-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F66886C21ED3C5700DE3080 /* SF-Pro-Display-Ultralight.otf */; };
+		7F66886F21ED3DE600DE3080 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F66886E21ED3DE600DE3080 /* SF-Pro-Display-Light.otf */; };
+		7F66887121ED4C8900DE3080 /* CustomSeparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F66887021ED4C8900DE3080 /* CustomSeparator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F2D9E4821ED15F400AD7F94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F2D9E2621ED15F400AD7F94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F2D9E2D21ED15F400AD7F94;
+			remoteInfo = KalibroCalendar;
+		};
+		7F2D9E5321ED15F400AD7F94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F2D9E2621ED15F400AD7F94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F2D9E2D21ED15F400AD7F94;
+			remoteInfo = KalibroCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F2D9E2E21ED15F400AD7F94 /* KalibroCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KalibroCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2D9E3221ED15F400AD7F94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7F2D9E3421ED15F400AD7F94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7F2D9E3521ED15F400AD7F94 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7F2D9E3721ED15F400AD7F94 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7F2D9E3821ED15F400AD7F94 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7F2D9E3B21ED15F400AD7F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F2D9E3D21ED15F400AD7F94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F2D9E4021ED15F400AD7F94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F2D9E4221ED15F400AD7F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F2D9E4721ED15F400AD7F94 /* KalibroCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KalibroCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2D9E4B21ED15F400AD7F94 /* KalibroCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KalibroCalendarTests.m; sourceTree = "<group>"; };
+		7F2D9E4D21ED15F400AD7F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F2D9E5221ED15F400AD7F94 /* KalibroCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KalibroCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F2D9E5621ED15F400AD7F94 /* KalibroCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KalibroCalendarUITests.m; sourceTree = "<group>"; };
+		7F2D9E5821ED15F400AD7F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F66886621ED210A00DE3080 /* CalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarController.m; sourceTree = "<group>"; };
+		7F66886821ED211D00DE3080 /* CalendarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarController.h; sourceTree = "<group>"; };
+		7F66886921ED23FA00DE3080 /* CustomCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCalendar.m; sourceTree = "<group>"; };
+		7F66886B21ED240600DE3080 /* CustomCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCalendar.h; sourceTree = "<group>"; };
+		7F66886C21ED3C5700DE3080 /* SF-Pro-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Ultralight.otf"; sourceTree = SOURCE_ROOT; };
+		7F66886E21ED3DE600DE3080 /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = SOURCE_ROOT; };
+		7F66887021ED4C8900DE3080 /* CustomSeparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSeparator.m; sourceTree = "<group>"; };
+		7F66887221ED4C9600DE3080 /* CustomSeparator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSeparator.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F2D9E2B21ED15F400AD7F94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2D9E4421ED15F400AD7F94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2D9E4F21ED15F400AD7F94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F2D9E2521ED15F300AD7F94 = {
+			isa = PBXGroup;
+			children = (
+				7F2D9E3021ED15F400AD7F94 /* KalibroCalendar */,
+				7F2D9E4A21ED15F400AD7F94 /* KalibroCalendarTests */,
+				7F2D9E5521ED15F400AD7F94 /* KalibroCalendarUITests */,
+				7F2D9E2F21ED15F400AD7F94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F2D9E2F21ED15F400AD7F94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F2D9E2E21ED15F400AD7F94 /* KalibroCalendar.app */,
+				7F2D9E4721ED15F400AD7F94 /* KalibroCalendarTests.xctest */,
+				7F2D9E5221ED15F400AD7F94 /* KalibroCalendarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F2D9E3021ED15F400AD7F94 /* KalibroCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				7F2D9E3421ED15F400AD7F94 /* AppDelegate.h */,
+				7F2D9E3521ED15F400AD7F94 /* AppDelegate.m */,
+				7F2D9E3721ED15F400AD7F94 /* ViewController.h */,
+				7F2D9E3821ED15F400AD7F94 /* ViewController.m */,
+				7F66886621ED210A00DE3080 /* CalendarController.m */,
+				7F66886921ED23FA00DE3080 /* CustomCalendar.m */,
+				7F66887021ED4C8900DE3080 /* CustomSeparator.m */,
+				7F66887221ED4C9600DE3080 /* CustomSeparator.h */,
+				7F66886B21ED240600DE3080 /* CustomCalendar.h */,
+				7F66886C21ED3C5700DE3080 /* SF-Pro-Display-Ultralight.otf */,
+				7F66886821ED211D00DE3080 /* CalendarController.h */,
+				7F2D9E3A21ED15F400AD7F94 /* Main.storyboard */,
+				7F2D9E3D21ED15F400AD7F94 /* Assets.xcassets */,
+				7F2D9E3F21ED15F400AD7F94 /* LaunchScreen.storyboard */,
+				7F2D9E4221ED15F400AD7F94 /* Info.plist */,
+				7F66886E21ED3DE600DE3080 /* SF-Pro-Display-Light.otf */,
+				7F2D9E3121ED15F400AD7F94 /* Supporting Files */,
+			);
+			path = KalibroCalendar;
+			sourceTree = "<group>";
+		};
+		7F2D9E3121ED15F400AD7F94 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F2D9E3221ED15F400AD7F94 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7F2D9E4A21ED15F400AD7F94 /* KalibroCalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F2D9E4B21ED15F400AD7F94 /* KalibroCalendarTests.m */,
+				7F2D9E4D21ED15F400AD7F94 /* Info.plist */,
+			);
+			path = KalibroCalendarTests;
+			sourceTree = "<group>";
+		};
+		7F2D9E5521ED15F400AD7F94 /* KalibroCalendarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F2D9E5621ED15F400AD7F94 /* KalibroCalendarUITests.m */,
+				7F2D9E5821ED15F400AD7F94 /* Info.plist */,
+			);
+			path = KalibroCalendarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F2D9E2D21ED15F400AD7F94 /* KalibroCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2D9E5B21ED15F400AD7F94 /* Build configuration list for PBXNativeTarget "KalibroCalendar" */;
+			buildPhases = (
+				7F2D9E2A21ED15F400AD7F94 /* Sources */,
+				7F2D9E2B21ED15F400AD7F94 /* Frameworks */,
+				7F2D9E2C21ED15F400AD7F94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KalibroCalendar;
+			productName = KalibroCalendar;
+			productReference = 7F2D9E2E21ED15F400AD7F94 /* KalibroCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F2D9E4621ED15F400AD7F94 /* KalibroCalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2D9E5E21ED15F400AD7F94 /* Build configuration list for PBXNativeTarget "KalibroCalendarTests" */;
+			buildPhases = (
+				7F2D9E4321ED15F400AD7F94 /* Sources */,
+				7F2D9E4421ED15F400AD7F94 /* Frameworks */,
+				7F2D9E4521ED15F400AD7F94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F2D9E4921ED15F400AD7F94 /* PBXTargetDependency */,
+			);
+			name = KalibroCalendarTests;
+			productName = KalibroCalendarTests;
+			productReference = 7F2D9E4721ED15F400AD7F94 /* KalibroCalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F2D9E5121ED15F400AD7F94 /* KalibroCalendarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2D9E6121ED15F400AD7F94 /* Build configuration list for PBXNativeTarget "KalibroCalendarUITests" */;
+			buildPhases = (
+				7F2D9E4E21ED15F400AD7F94 /* Sources */,
+				7F2D9E4F21ED15F400AD7F94 /* Frameworks */,
+				7F2D9E5021ED15F400AD7F94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F2D9E5421ED15F400AD7F94 /* PBXTargetDependency */,
+			);
+			name = KalibroCalendarUITests;
+			productName = KalibroCalendarUITests;
+			productReference = 7F2D9E5221ED15F400AD7F94 /* KalibroCalendarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F2D9E2621ED15F400AD7F94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Nikolay Taran";
+				TargetAttributes = {
+					7F2D9E2D21ED15F400AD7F94 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4GZ5T9GPNN;
+						ProvisioningStyle = Automatic;
+					};
+					7F2D9E4621ED15F400AD7F94 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4GZ5T9GPNN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7F2D9E2D21ED15F400AD7F94;
+					};
+					7F2D9E5121ED15F400AD7F94 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 4GZ5T9GPNN;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7F2D9E2D21ED15F400AD7F94;
+					};
+				};
+			};
+			buildConfigurationList = 7F2D9E2921ED15F400AD7F94 /* Build configuration list for PBXProject "KalibroCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F2D9E2521ED15F300AD7F94;
+			productRefGroup = 7F2D9E2F21ED15F400AD7F94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F2D9E2D21ED15F400AD7F94 /* KalibroCalendar */,
+				7F2D9E4621ED15F400AD7F94 /* KalibroCalendarTests */,
+				7F2D9E5121ED15F400AD7F94 /* KalibroCalendarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F2D9E2C21ED15F400AD7F94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2D9E4121ED15F400AD7F94 /* LaunchScreen.storyboard in Resources */,
+				7F66886F21ED3DE600DE3080 /* SF-Pro-Display-Light.otf in Resources */,
+				7F2D9E3E21ED15F400AD7F94 /* Assets.xcassets in Resources */,
+				7F2D9E3C21ED15F400AD7F94 /* Main.storyboard in Resources */,
+				7F66886D21ED3C5700DE3080 /* SF-Pro-Display-Ultralight.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2D9E4521ED15F400AD7F94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2D9E5021ED15F400AD7F94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F2D9E2A21ED15F400AD7F94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2D9E3921ED15F400AD7F94 /* ViewController.m in Sources */,
+				7F66886721ED210A00DE3080 /* CalendarController.m in Sources */,
+				7F2D9E3621ED15F400AD7F94 /* AppDelegate.m in Sources */,
+				7F66886A21ED23FA00DE3080 /* CustomCalendar.m in Sources */,
+				7F66887121ED4C8900DE3080 /* CustomSeparator.m in Sources */,
+				7F2D9E3321ED15F400AD7F94 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2D9E4321ED15F400AD7F94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2D9E4C21ED15F400AD7F94 /* KalibroCalendarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F2D9E4E21ED15F400AD7F94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F2D9E5721ED15F400AD7F94 /* KalibroCalendarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F2D9E4921ED15F400AD7F94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F2D9E2D21ED15F400AD7F94 /* KalibroCalendar */;
+			targetProxy = 7F2D9E4821ED15F400AD7F94 /* PBXContainerItemProxy */;
+		};
+		7F2D9E5421ED15F400AD7F94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F2D9E2D21ED15F400AD7F94 /* KalibroCalendar */;
+			targetProxy = 7F2D9E5321ED15F400AD7F94 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7F2D9E3A21ED15F400AD7F94 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F2D9E3B21ED15F400AD7F94 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7F2D9E3F21ED15F400AD7F94 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F2D9E4021ED15F400AD7F94 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7F2D9E5921ED15F400AD7F94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F2D9E5A21ED15F400AD7F94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7F2D9E5C21ED15F400AD7F94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4GZ5T9GPNN;
+				INFOPLIST_FILE = KalibroCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckayne.KalibroCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7F2D9E5D21ED15F400AD7F94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4GZ5T9GPNN;
+				INFOPLIST_FILE = KalibroCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckayne.KalibroCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7F2D9E5F21ED15F400AD7F94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4GZ5T9GPNN;
+				INFOPLIST_FILE = KalibroCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckayne.KalibroCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KalibroCalendar.app/KalibroCalendar";
+			};
+			name = Debug;
+		};
+		7F2D9E6021ED15F400AD7F94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4GZ5T9GPNN;
+				INFOPLIST_FILE = KalibroCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckayne.KalibroCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KalibroCalendar.app/KalibroCalendar";
+			};
+			name = Release;
+		};
+		7F2D9E6221ED15F400AD7F94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4GZ5T9GPNN;
+				INFOPLIST_FILE = KalibroCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckayne.KalibroCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KalibroCalendar;
+			};
+			name = Debug;
+		};
+		7F2D9E6321ED15F400AD7F94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4GZ5T9GPNN;
+				INFOPLIST_FILE = KalibroCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckayne.KalibroCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = KalibroCalendar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F2D9E2921ED15F400AD7F94 /* Build configuration list for PBXProject "KalibroCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2D9E5921ED15F400AD7F94 /* Debug */,
+				7F2D9E5A21ED15F400AD7F94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2D9E5B21ED15F400AD7F94 /* Build configuration list for PBXNativeTarget "KalibroCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2D9E5C21ED15F400AD7F94 /* Debug */,
+				7F2D9E5D21ED15F400AD7F94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2D9E5E21ED15F400AD7F94 /* Build configuration list for PBXNativeTarget "KalibroCalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2D9E5F21ED15F400AD7F94 /* Debug */,
+				7F2D9E6021ED15F400AD7F94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F2D9E6121ED15F400AD7F94 /* Build configuration list for PBXNativeTarget "KalibroCalendarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F2D9E6221ED15F400AD7F94 /* Debug */,
+				7F2D9E6321ED15F400AD7F94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F2D9E2621ED15F400AD7F94 /* Project object */;
+}
