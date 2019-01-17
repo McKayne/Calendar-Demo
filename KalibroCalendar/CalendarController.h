@@ -10,10 +10,11 @@
 #define CalendarController_h
 
 #import <UIKit/UIKit.h>
+#import "DimController.h"
 
 @interface CalendarController : UIViewController
 
-
+@property (strong) DimController *dim;
 
 @end
 

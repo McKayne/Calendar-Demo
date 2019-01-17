@@ -1,20 +1,20 @@
 //
-//  CustomCalendar.m
+//  PadCustomCalendar.m
 //  KalibroCalendar
 //
-//  Created by для интернета on 14.01.19.
+//  Created by для интернета on 16.01.19.
 //  Copyright © 2019 Nikolay Taran. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CustomCalendar.h"
+#import "PadCustomCalendar.h"
 #import "CustomSeparator.h"
 #import "DimController.h"
 #import "YearPickerController.h"
 #import <time.h>
 
-@implementation CustomCalendar
+@implementation PadCustomCalendar
 
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -23,41 +23,31 @@
     
     CGFloat calendarHeight = self.frame.size.height / 2;
     
-    UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width / 5 * 4 + 26, 10, 32, 32)];
+    UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width / 5 * 4 + self.frame.size.width / 5 / 2 - 32, 10, 64, 64)];
     [calendar setImage:[UIImage imageNamed:@"calendar.png"]];
     [self addSubview:calendar];
     [calendar setUserInteractionEnabled:true];
     [calendar addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openDatePicker:)]];
     
+    CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:245.0f / 255.0f green:245.0f / 255.0f blue:245.0f / 255.0f alpha:1.0f] CGColor]);
+    for (int i = 0; i < 5; i++) {
+        CGContextFillRect(context, CGRectMake(self.frame.size.width / 7 * 5, calendarHeight / 6 * (i + 1), self.frame.size.width / 7 * 2, calendarHeight / 6));
+    }
+    CGContextSetFillColorWithColor(context, [[UIColor yellowColor] CGColor]);
+    CGContextFillRect(context, CGRectMake(self.frame.size.width / 7 * 2, calendarHeight / 6 * (3 + 1), self.frame.size.width / 7, calendarHeight / 6));
+    
     CGPoint selected;
     if (self.isPortrait) {
-        selected = CGPointMake(self.frame.size.width / 7 * (int) (self.selected % 7) + self.frame.size.width / 7 / 2, calendarHeight / 6 * (int) (self.selected % 5) + calendarHeight / 6 / 2 + calendarHeight / 6);
-        [self drawArc:selected to:selected red:255.0f / 255.0f green:255.0f / 255.0f blue:0.0f / 255.0f radius:self.frame.size.width / 7 / 2 / 2];
+        selected = CGPointMake(self.frame.size.width / 7 * (int) (3) + self.frame.size.width / 7 * 3 / 4 + 10, calendarHeight / 6 * (int) (3) + calendarHeight / 6 - calendarHeight * 3 / 4 / 6);
+        
+        [self drawArc:selected to:selected red:255.0f / 255.0f green:0.0f / 255.0f blue:0.0f / 255.0f radius:12.5];
     } else {
-        selected = CGPointMake(self.frame.size.width / 2 / 7 * (int) (self.selected % 7) + self.frame.size.width / 2 / 7 / 2, self.frame.size.height / 6 * (int) (self.selected % 5) + self.frame.size.height / 6 / 2 + self.frame.size.height / 6);
+        selected = CGPointMake(self.frame.size.width / 2 / 7 * (int) (self.todayDay % 7) + self.frame.size.width / 2 / 7 / 2, self.frame.size.height / 6 * (int) (self.todayDay % 5) + self.frame.size.height / 6 / 2 + self.frame.size.height / 6);
         [self drawArc:selected to:selected red:255.0f / 255.0f green:255.0f / 255.0f blue:0.0f / 255.0f radius:self.frame.size.width / 2 / 7 / 2 / 2];
     }
     //[self drawArc:selected to:selected red:52.0f / 255.0f green:172.0f / 255.0f blue:217.0f / 255.0f];
     
-    CGPoint order;
-    if (self.isPortrait) {
-        order = CGPointMake(self.frame.size.width / 7 * (int) (self.selected % 7) + self.frame.size.width / 7 / 2, calendarHeight / 6 * (int) (self.selected % 5) + calendarHeight / 6 / 2 + 20 + calendarHeight / 6);
-    } else {
-        order = CGPointMake(self.frame.size.width / 2 / 7 * (int) (self.selected % 7) + self.frame.size.width / 2 / 7 / 2, self.frame.size.height / 6 * (int) (self.selected % 5) + self.frame.size.height / 6 / 2 + 20 + self.frame.size.height / 6);
-    }
-    [self drawArc:order to:selected red:255.0f / 255.0f green:255.0f / 255.0f blue:0.0f / 255.0f radius:2.5f];
-    
     srand(time(NULL));
-    for (int i = 0; i < 4; i++) {
-        int demo = rand() % 20 + 1;
-        CGPoint order;
-        if (self.isPortrait) {
-            order = CGPointMake(self.frame.size.width / 7 * (int) (demo % 7) + self.frame.size.width / 7 / 2, calendarHeight / 6 * (int) (demo % 5) + calendarHeight / 6 / 2 + 20 + calendarHeight / 6);
-        } else {
-            order = CGPointMake(self.frame.size.width / 2 / 7 * (int) (demo % 7) + self.frame.size.width / 2 / 7 / 2, self.frame.size.height / 6 * (int) (demo % 5) + self.frame.size.height / 6 / 2 + 20 + self.frame.size.height / 6);
-        }
-        [self drawArc:order to:selected red:255.0f / 255.0f green:255.0f / 255.0f blue:0.0f / 255.0f radius:2.5f];
-    }
     
     int nthDay = 0, day = 1;
     for (int i = 0; i < 5; i++) {
@@ -66,14 +56,14 @@
                 UILabel *dayLabel;
                 
                 if (self.isPortrait) {
-                    dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 7, i * calendarHeight / 6 + calendarHeight / 6, self.frame.size.width / 7, calendarHeight / 6)];
+                    dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 7, i * calendarHeight / 6 + calendarHeight / 6, self.frame.size.width / 7 - 10, calendarHeight / 2 / 6)];
                 } else {
                     dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 2 / 7, i * self.frame.size.height / 6 + self.frame.size.height / 6, self.frame.size.width / 2 / 7, self.frame.size.height / 6)];
                 }
                 [self addSubview:dayLabel];
-            
+                
                 [dayLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:16]];
-                [dayLabel setTextAlignment:NSTextAlignmentCenter];
+                [dayLabel setTextAlignment:NSTextAlignmentRight];
                 [dayLabel setText:[NSString stringWithFormat:@"%d", day]];
                 
                 if (j > 4) {
@@ -81,7 +71,7 @@
                 }
                 
                 if (day == self.todayDay) {
-                    [dayLabel setTextColor:[UIColor redColor]];
+                    [dayLabel setTextColor:[UIColor whiteColor]];
                 }
                 
                 day++;
@@ -90,15 +80,56 @@
         }
     }
     
+    nthDay = 0;
+    day = 1;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (rand() % 4 == 0 || j + i * 7 == 23) {
+            if (nthDay >= self.startFrom && nthDay <= self.daysTotal) {
+                UILabel *dayLabel;
+                
+                if (self.isPortrait) {
+                    dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 7 + 10, i * calendarHeight / 6 + calendarHeight / 6 + calendarHeight / 2 / 6, self.frame.size.width / 7 - 20, calendarHeight / 5 / 6)];
+                } else {
+                    dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 2 / 7, i * self.frame.size.height / 6 + self.frame.size.height / 6, self.frame.size.width / 2 / 7, self.frame.size.height / 6)];
+                }
+                [self addSubview:dayLabel];
+                
+                [dayLabel setBackgroundColor:[UIColor colorWithRed:248.0f / 255.0f green:219.0f / 255.0f blue:249.0f / 255.0f alpha:1.0f]];
+                [dayLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:10]];
+                [dayLabel setTextAlignment:NSTextAlignmentLeft];
+                [dayLabel setText:@"  Замерить потолки"];
+                
+                
+                
+                day++;
+            }
+            }
+            nthDay++;
+        }
+    }
+    
     for (int i = 0; i <= 5; i++) {
+        
         CustomSeparator *separator;
         if (self.isPortrait) {
-            separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(0, calendarHeight / 6 * i + calendarHeight / 6, self.frame.size.width, 1)];
+            separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(0, calendarHeight / 6 * i + calendarHeight / 6 - 1, self.frame.size.width, 1)];
         } else {
             separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(0, self.frame.size.height / 6 * i + self.frame.size.height / 6, self.frame.size.width / 2, 1)];
         }
         [separator setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0]];
         [self addSubview:separator];
+        for (int j = 0; j <= 7; j++) {
+            
+            CustomSeparator *separator;
+            if (self.isPortrait) {
+                separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(self.frame.size.width / 7 * j, calendarHeight / 6, 1, calendarHeight - calendarHeight / 6)];
+            } else {
+                separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(0, self.frame.size.height / 6 * i + self.frame.size.height / 6, self.frame.size.width / 2, 1)];
+            }
+            [separator setBackgroundColor:[UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0]];
+            [self addSubview:separator];
+        }
     }
     
     UITableView *dailyTasksList;
@@ -108,6 +139,7 @@
         dailyTasksList = [[UITableView alloc] initWithFrame:CGRectMake(self.frame.size.width / 2, 0, self.frame.size.width / 2, self.frame.size.height)];
     }
     [self addSubview:dailyTasksList];
+    dailyTasksList.delegate = self;
     dailyTasksList.dataSource = self;
 }
 
@@ -133,8 +165,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [UITableViewCell new];
     
-    UILabel *timeA = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 67.5, 20)];
-    [timeA setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
+    UILabel *timeA = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 67.5, 40)];
+    [timeA setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:20]];
     [timeA setTextAlignment:NSTextAlignmentRight];
     switch (indexPath.row) {
         case 0:
@@ -152,8 +184,8 @@
     }
     [cell.contentView addSubview:timeA];
     
-    UILabel *timeB = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 67.5, 20)];
-    [timeB setFont:[UIFont fontWithName:@"SFProDisplay-Ultralight" size:12]];
+    UILabel *timeB = [[UILabel alloc] initWithFrame:CGRectMake(30, 40, 67.5, 40)];
+    [timeB setFont:[UIFont fontWithName:@"SFProDisplay-Ultralight" size:20]];
     [timeB setTextAlignment:NSTextAlignmentRight];
     switch (indexPath.row) {
         case 0:
@@ -171,12 +203,12 @@
     }
     [cell.contentView addSubview:timeB];
     
-    CustomSeparator *separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(80, 5, 1, 35)];
+    CustomSeparator *separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(110, 5, 1, 80)];
     [separator setBackgroundColor:[UIColor colorWithRed:1.0f green:0.0f blue:1.0f alpha:1.0]];
     [cell.contentView addSubview:separator];
     
-    UILabel *address = [[UILabel alloc] initWithFrame:CGRectMake(90, 0, 230, 20)];
-    [address setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
+    UILabel *address = [[UILabel alloc] initWithFrame:CGRectMake(120, 0, 300, 40)];
+    [address setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:20]];
     [address setTextAlignment:NSTextAlignmentLeft];
     switch (indexPath.row) {
         case 0:
@@ -194,37 +226,45 @@
     }
     [cell.contentView addSubview:address];
     
-    UILabel *task = [[UILabel alloc] initWithFrame:CGRectMake(90, 20, 230, 20)];
-    [task setFont:[UIFont fontWithName:@"SFProDisplay-Ultralight" size:12]];
+    UILabel *task = [[UILabel alloc] initWithFrame:CGRectMake(120, 40, 230, 40)];
+    [task setFont:[UIFont fontWithName:@"SFProDisplay-Ultralight" size:20]];
     [task setTextAlignment:NSTextAlignmentLeft];
-    [task setText:@"Замерить потолки"];
+    switch (indexPath.row) {
+        case 0:
+            [task setText:@"1.43 км"];
+            break;
+        case 1:
+            [task setText:@"0.89 км"];
+            break;
+        case 2:
+            [task setText:@"12.71 км"];
+            break;
+        case 3:
+            [task setText:@"9.08 км"];
+            break;
+    }
     [cell.contentView addSubview:task];
     
     UILabel *distance;
     if (self.isPortrait) {
-        distance = [[UILabel alloc] initWithFrame:CGRectMake(240, 0, 80, 40)];
+        distance = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 210, 0, 160, 40)];
     } else {
         distance = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width / 2 - 70, 0, 80, 40)];
     }
-    [distance setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
-    [distance setTextAlignment:NSTextAlignmentCenter];
-    switch (indexPath.row) {
-        case 0:
-            [distance setText:@"1.43 км"];
-            break;
-        case 1:
-            [distance setText:@"0.89 км"];
-            break;
-        case 2:
-            [distance setText:@"12.71 км"];
-            break;
-        case 3:
-            [distance setText:@"9.08 км"];
-            break;
-    }
+    [distance setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:20]];
+    [distance setTextAlignment:NSTextAlignmentRight];
+    [distance setText:@"Замерить потолки"];
     [cell.contentView addSubview:distance];
     
+    UIImageView *accept = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 220, 40, 187.5, 32.25)];
+    [accept setImage:[UIImage imageNamed:@"accept.png"]];
+    [cell.contentView addSubview:accept];
+    
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 90.0f;
 }
 
 - (void)openDatePicker:(UITapGestureRecognizer *)recognizer {

@@ -1,18 +1,18 @@
 //
-//  CustomCalendar.h
+//  PadCustomCalendar.h
 //  KalibroCalendar
 //
-//  Created by для интернета on 14.01.19.
+//  Created by для интернета on 16.01.19.
 //  Copyright © 2019 Nikolay Taran. All rights reserved.
 //
 
-#ifndef CustomCalendar_h
-#define CustomCalendar_h
+#ifndef PadCustomCalendar_h
+#define PadCustomCalendar_h
 
 #import <UIKit/UIKit.h>
 #import "CalendarController.h"
 
-@interface CustomCalendar : UIView<UITableViewDataSource>
+@interface PadCustomCalendar : UIView<UITableViewDelegate, UITableViewDataSource>
 
 @property BOOL isPortrait;
 @property (strong) CalendarController *calendar;
@@ -24,4 +24,4 @@
 
 @end
 
-#endif /* CustomCalendar_h */
+#endif /* PadCustomCalendar_h */
