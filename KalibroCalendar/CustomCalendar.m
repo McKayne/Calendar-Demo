@@ -23,11 +23,7 @@
     
     CGFloat calendarHeight = self.frame.size.height / 2;
     
-    UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width / 5 * 4 + 26, 10, 32, 32)];
-    [calendar setImage:[UIImage imageNamed:@"calendar.png"]];
-    [self addSubview:calendar];
-    [calendar setUserInteractionEnabled:true];
-    [calendar addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openDatePicker:)]];
+    
     
     CGPoint selected;
     if (self.isPortrait) {
@@ -66,7 +62,7 @@
                 UILabel *dayLabel;
                 
                 if (self.isPortrait) {
-                    dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 7, i * calendarHeight / 6 + calendarHeight / 6, self.frame.size.width / 7, calendarHeight / 6)];
+                    dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 7, i * calendarHeight / 6, self.frame.size.width / 7, calendarHeight / 6)];
                 } else {
                     dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(j * self.frame.size.width / 2 / 7, i * self.frame.size.height / 6 + self.frame.size.height / 6, self.frame.size.width / 2 / 7, self.frame.size.height / 6)];
                 }
@@ -93,7 +89,7 @@
     for (int i = 0; i <= 5; i++) {
         CustomSeparator *separator;
         if (self.isPortrait) {
-            separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(0, calendarHeight / 6 * i + calendarHeight / 6, self.frame.size.width, 1)];
+            separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(0, calendarHeight / 6 * i, self.frame.size.width, 1)];
         } else {
             separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(0, self.frame.size.height / 6 * i + self.frame.size.height / 6, self.frame.size.width / 2, 1)];
         }
@@ -101,14 +97,14 @@
         [self addSubview:separator];
     }
     
-    UITableView *dailyTasksList;
+    /*UITableView *dailyTasksList;
     if (self.isPortrait) {
         dailyTasksList = [[UITableView alloc] initWithFrame:CGRectMake(0, self.frame.size.height / 2, self.frame.size.width, self.frame.size.height / 2)];
     } else {
         dailyTasksList = [[UITableView alloc] initWithFrame:CGRectMake(self.frame.size.width / 2, 0, self.frame.size.width / 2, self.frame.size.height)];
     }
     [self addSubview:dailyTasksList];
-    dailyTasksList.dataSource = self;
+    dailyTasksList.dataSource = self;*/
 }
 
 - (void)drawArc:(CGPoint) from to:(CGPoint) to red:(float)red green:(float)green blue:(float)blue radius:(float)radius {

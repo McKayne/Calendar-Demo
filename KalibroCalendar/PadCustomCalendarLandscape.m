@@ -24,12 +24,6 @@
     CGFloat calendarWidth = self.frame.size.width * 2 / 3;
     CGFloat calendarHeight = self.frame.size.height;// * 0.7;
     
-    UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(calendarWidth / 5 * 4 + calendarWidth / 5 / 2 - 32, calendarHeight / 6 - 64 - (calendarHeight / 6 - (calendarHeight / 6 - 64)) / 2, 64, 64)];
-    [calendar setImage:[UIImage imageNamed:@"calendar.png"]];
-    [self addSubview:calendar];
-    [calendar setUserInteractionEnabled:true];
-    [calendar addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openDatePicker:)]];
-    
     CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:245.0f / 255.0f green:245.0f / 255.0f blue:245.0f / 255.0f alpha:1.0f] CGColor]);
     for (int i = 0; i < 5; i++) {
         CGContextFillRect(context, CGRectMake(calendarWidth / 7 * 5, calendarHeight / 6 * (i + 1), calendarWidth / 7 * 2, calendarHeight / 6));
