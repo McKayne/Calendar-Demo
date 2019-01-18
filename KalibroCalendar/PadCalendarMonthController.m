@@ -33,7 +33,7 @@
     calendar.month = 0;
     calendar.startFrom = 1;
     calendar.daysTotal = 31;
-    calendar.todayDay = 17;
+    calendar.todayDay = 18;
     calendar.selected = 23;
     [self.view addSubview:calendar];
     } else {
@@ -50,7 +50,7 @@
         calendar.month = 0;
         calendar.startFrom = 1;
         calendar.daysTotal = 31;
-        calendar.todayDay = 17;
+        calendar.todayDay = 18;
         calendar.selected = 23;
         [self.view addSubview:calendar];
     }

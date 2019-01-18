@@ -32,7 +32,7 @@
     CGContextFillRect(context, CGRectMake(calendarWidth / 7 * 2, calendarHeight / 6 * (3 + 1), calendarWidth / 7, calendarHeight / 6));
     
     CGPoint selected;
-    selected = CGPointMake(calendarWidth / 7 * (int) (3) + calendarWidth / 7 * 3 / 4 + 7.25, calendarHeight / 6 * (int) (3) + calendarHeight / 6 - calendarHeight * 3 / 4 / 6);
+    selected = CGPointMake(calendarWidth / 7 * (int) (4) + calendarWidth / 7 * 3 / 4 + 7.25, calendarHeight / 6 * (int) (3) + calendarHeight / 6 - calendarHeight * 3 / 4 / 6);
         
     [self drawArc:selected to:selected red:255.0f / 255.0f green:0.0f / 255.0f blue:0.0f / 255.0f radius:12.5];
     //[self drawArc:selected to:selected red:52.0f / 255.0f green:172.0f / 255.0f blue:217.0f / 255.0f];

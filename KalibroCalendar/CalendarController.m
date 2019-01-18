@@ -390,6 +390,9 @@
 }
 
 - (void)openSortOptions:(UITapGestureRecognizer *)recognizer {
+    DimController *dim = [DimController new];
+    [self.view addSubview:dim.view];
+
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Сортировать по" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alert.view setTintColor:[UIColor colorWithRed:141.0 / 255.0f green:143.0 / 255.0f blue:140.0 / 255.0f alpha: 1.0f]];
     
@@ -407,6 +410,9 @@
 }
 
 - (void)openAscOptions:(UITapGestureRecognizer *)recognizer {
+    DimController *dim = [DimController new];
+    [self.view addSubview:dim.view];
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Сортировать" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alert.view setTintColor:[UIColor colorWithRed:141.0 / 255.0f green:143.0 / 255.0f blue:140.0 / 255.0f alpha: 1.0f]];
     
