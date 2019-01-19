@@ -10,10 +10,13 @@
 #define CalendarMonthController_h
 
 #import <UIKit/UIKit.h>
+#import "CalendarController.h"
 
 @interface CalendarMonthController : UIViewController
 
+@property (strong) CalendarController *controller;
 
+- (instancetype)initWithController:(CalendarController *)controller;
 
 @end
 

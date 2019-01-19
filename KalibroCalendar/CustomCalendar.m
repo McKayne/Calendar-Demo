@@ -58,7 +58,7 @@
     int nthDay = 0, day = 1;
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 7; j++) {
-            if (nthDay >= self.startFrom && nthDay <= self.daysTotal) {
+            if (nthDay >= self.startFrom && day <= self.daysTotal) {
                 UILabel *dayLabel;
                 
                 if (self.isPortrait) {

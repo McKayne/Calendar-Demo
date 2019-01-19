@@ -55,6 +55,8 @@
         calendar.selected = 23;
         [self.view addSubview:calendar];*/
         
+        self.currentMonth = 1;
+        self.currentYear = 2019;
         if ([[UIApplication sharedApplication] statusBarOrientation] == UIDeviceOrientationPortrait) {
             UIImageView *calendar = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 5 * 4 + 26, 10, 32, 32)];
             [calendar setImage:[UIImage imageNamed:@"calendar.png"]];
@@ -70,8 +72,8 @@
             pageView.delegate = self;
             pageView.dataSource = self;
         
-            self.pages = @[[CalendarMonthController new], [CalendarMonthController new], [CalendarMonthController new]];
-            [pageView setViewControllers:@[[CalendarMonthController new]] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
+            CalendarMonthController *month = [[CalendarMonthController alloc] initWithController:self];
+            [pageView setViewControllers:@[month] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
             //[pageView setViewControllers([pages[0]], direction: .forward, animated: true, completion: nil)
         
             pageView.view.frame = CGRectMake(0, self.view.frame.size.height / 2 / 6, self.view.frame.size.width, self.view.frame.size.height / 2 + 25);
@@ -248,7 +250,14 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        CalendarMonthController *month = [CalendarMonthController new];
+        if (self.currentMonth > 1) {
+            self.currentMonth--;
+        } else {
+            self.currentYear--;
+            self.currentMonth = 12;
+        }
+        
+        CalendarMonthController *month = [[CalendarMonthController alloc] initWithController:self];
         return month;
     } else {
         PadCalendarMonthController *month = [PadCalendarMonthController new];
@@ -258,7 +267,14 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        CalendarMonthController *month = [CalendarMonthController new];
+        if (self.currentMonth < 12) {
+            self.currentMonth++;
+        } else {
+            self.currentYear++;
+            self.currentMonth = 1;
+        }
+        
+        CalendarMonthController *month = [[CalendarMonthController alloc] initWithController:self];
         return month;
     } else {
         PadCalendarMonthController *month = [PadCalendarMonthController new];
@@ -285,7 +301,45 @@
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
-    
+    if (completed) {
+    switch (self.currentMonth) {
+        case 1:
+            [self.navigationItem setTitle:[NSString stringWithFormat:@"Январь %d", self.currentYear]];
+            break;
+        case 2:
+            [self.navigationItem setTitle:[NSString stringWithFormat:@"Февраль %d", self.currentYear]];
+            break;
+        case 3:
+            [self.navigationItem setTitle:[NSString stringWithFormat:@"Март %d", self.currentYear]];
+            break;
+        case 4:
+            [self.navigationItem setTitle:[NSString stringWithFormat:@"Апрель %d", self.currentYear]];
+            break;
+        case 5:
+            [self.navigationItem setTitle:[NSString stringWithFormat:@"Май %d", self.currentYear]];
+            break;
+        case 6:
+            [self.navigationItem setTitle:[NSString stringWithFormat:@"Июнь %d", self.currentYear]];
+            break;
+        case 7:
+            [self.navigationItem setTitle:@"Июль 2019"];
+            break;
+        case 8:
+            [self.navigationItem setTitle:@"Август 2019"];
+            break;
+        case 9:
+            [self.navigationItem setTitle:@"Сентябрь 2019"];
+            break;
+        case 10:
+            [self.navigationItem setTitle:@"Октябрь 2019"];
+            break;
+        case 11:
+            [self.navigationItem setTitle:@"Ноябрь 2019"];
+            break;
+        case 12:
+            [self.navigationItem setTitle:@"Декабрь 2019"];
+    }
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

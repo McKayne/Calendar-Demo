@@ -15,8 +15,11 @@
 #import "DemoPadDataSource.h"
 #import "DemoPadDataSourceLandscape.h"
 
+#import "CalendarController.h"
+
 @interface CalendarController : UIViewController<UIPageViewControllerDelegate, UIPageViewControllerDataSource, UITableViewDelegate, UITableViewDataSource>
 
+@property int currentMonth, currentYear;
 @property (strong) DemoPadDataSource *ds;
 @property (strong) DemoPadDataSourceLandscape *dsl;
 @property (strong) DimController *dim;
