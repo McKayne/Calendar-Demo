@@ -24,6 +24,7 @@
 @property (strong) DemoPadDataSourceLandscape *dsl;
 @property (strong) DimController *dim;
 @property (strong) NSArray<UIViewController *> *pages;
+@property (strong) NSMutableArray *cells;
 
 - (void)openSortOptions:(UITapGestureRecognizer *)recognizer;
 - (void)openAscOptions:(UITapGestureRecognizer *)recognizer;

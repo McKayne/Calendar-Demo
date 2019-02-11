@@ -16,6 +16,7 @@
 #import "PadCalendarMonthController.h"
 
 #import "CustomSeparator.h"
+#import "CustomOrderCell.h"
 
 @implementation CalendarController
 
@@ -38,22 +39,13 @@
     //[self.navigationController.navigationBar setBackgroundColor:[UIColor yellowColor]];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        /*CustomCalendar *calendar;
-        calendar = [[CustomCalendar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        if ([[UIApplication sharedApplication] statusBarOrientation] == UIDeviceOrientationPortrait) {
-            calendar = [[CustomCalendar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-            calendar.isPortrait = true;
-        } else {
-            calendar = [[CustomCalendar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30)];
-            calendar.isPortrait = false;
+        
+        self.cells = [[NSMutableArray alloc] initWithCapacity:4];
+        for (int i = 0; i < 4; i++) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:1];
+            CustomOrderCell *cell = [[CustomOrderCell alloc] initWithArgs:indexPath cells:self.cells];
+            self.cells[i] = cell;
         }
-        calendar.calendar = self;
-        calendar.month = 0;
-        calendar.startFrom = 1;
-        calendar.daysTotal = 31;
-        calendar.todayDay = 17;
-        calendar.selected = 23;
-        [self.view addSubview:calendar];*/
         
         self.currentMonth = 1;
         self.currentYear = 2019;
@@ -351,96 +343,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell new];
-    
-    UILabel *timeA = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 67.5, 20)];
-    [timeA setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
-    [timeA setTextAlignment:NSTextAlignmentRight];
-    switch (indexPath.row) {
-        case 0:
-            [timeA setText:@"09:00"];
-            break;
-        case 1:
-            [timeA setText:@"14:00"];
-            break;
-        case 2:
-            [timeA setText:@"20:00"];
-            break;
-        case 3:
-            [timeA setText:@"23:53"];
-            break;
-    }
-    [cell.contentView addSubview:timeA];
-    
-    UILabel *timeB = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 67.5, 20)];
-    [timeB setFont:[UIFont fontWithName:@"SFProDisplay-Ultralight" size:12]];
-    [timeB setTextAlignment:NSTextAlignmentRight];
-    switch (indexPath.row) {
-        case 0:
-            [timeB setText:@"10:00"];
-            break;
-        case 1:
-            [timeB setText:@"18:00"];
-            break;
-        case 2:
-            [timeB setText:@"20:50"];
-            break;
-        case 3:
-            [timeB setText:@"03:40"];
-            break;
-    }
-    [cell.contentView addSubview:timeB];
-    
-    CustomSeparator *separator = [[CustomSeparator alloc] initWithFrame:CGRectMake(80, 5, 1, 35)];
-    [separator setBackgroundColor:[UIColor colorWithRed:1.0f green:0.0f blue:1.0f alpha:1.0]];
-    [cell.contentView addSubview:separator];
-    
-    UILabel *address = [[UILabel alloc] initWithFrame:CGRectMake(90, 0, 230, 20)];
-    [address setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
-    [address setTextAlignment:NSTextAlignmentLeft];
-    switch (indexPath.row) {
-        case 0:
-            [address setText:@"Улица Циолковского 163"];
-            break;
-        case 1:
-            [address setText:@"Улица Плющиха, 37/21 13"];
-            break;
-        case 2:
-            [address setText:@"Улица Сакко и Ванцетти 74"];
-            break;
-        case 3:
-            [address setText:@"Улица Саперов 2"];
-            break;
-    }
-    [cell.contentView addSubview:address];
-    
-    UILabel *task = [[UILabel alloc] initWithFrame:CGRectMake(90, 20, 230, 20)];
-    [task setFont:[UIFont fontWithName:@"SFProDisplay-Ultralight" size:12]];
-    [task setTextAlignment:NSTextAlignmentLeft];
-    [task setText:@"Замерить потолки"];
-    [cell.contentView addSubview:task];
-    
-    UILabel *distance;
-    distance = [[UILabel alloc] initWithFrame:CGRectMake(240, 0, 80, 40)];
-    [distance setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
-    [distance setTextAlignment:NSTextAlignmentCenter];
-    switch (indexPath.row) {
-        case 0:
-            [distance setText:@"1.43 км"];
-            break;
-        case 1:
-            [distance setText:@"0.89 км"];
-            break;
-        case 2:
-            [distance setText:@"12.71 км"];
-            break;
-        case 3:
-            [distance setText:@"9.08 км"];
-            break;
-    }
-    [cell.contentView addSubview:distance];
-    
-    return cell;
+    return self.cells[indexPath.row];
 }
 
 - (void)openSortOptions:(UITapGestureRecognizer *)recognizer {

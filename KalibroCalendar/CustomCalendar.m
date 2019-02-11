@@ -14,6 +14,8 @@
 #import "YearPickerController.h"
 #import <time.h>
 
+#import "CustomOrderCell.h"
+
 @implementation CustomCalendar
 
 - (void)drawRect:(CGRect)rect {
@@ -127,28 +129,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell new];
+    return nil;
+    //CustomOrderCell *cell = [[CustomOrderCell alloc] initWithArgs:indexPath];
     
-    UILabel *timeA = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 67.5, 20)];
-    [timeA setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
-    [timeA setTextAlignment:NSTextAlignmentRight];
-    switch (indexPath.row) {
-        case 0:
-            [timeA setText:@"09:00"];
-            break;
-        case 1:
-            [timeA setText:@"14:00"];
-            break;
-        case 2:
-            [timeA setText:@"20:00"];
-            break;
-        case 3:
-            [timeA setText:@"23:53"];
-            break;
-    }
-    [cell.contentView addSubview:timeA];
     
-    UILabel *timeB = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 67.5, 20)];
+    
+    /*UILabel *timeB = [[UILabel alloc] initWithFrame:CGRectMake(0, 20, 67.5, 20)];
     [timeB setFont:[UIFont fontWithName:@"SFProDisplay-Ultralight" size:12]];
     [timeB setTextAlignment:NSTextAlignmentRight];
     switch (indexPath.row) {
@@ -218,9 +204,8 @@
             [distance setText:@"9.08 км"];
             break;
     }
-    [cell.contentView addSubview:distance];
+    [cell.contentView addSubview:distance];*/
     
-    return cell;
 }
 
 - (void)openDatePicker:(UITapGestureRecognizer *)recognizer {
