@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CalendarController.h"
+#import "PadCalendarController.h"
 
 @interface ViewController ()
 
@@ -43,8 +44,12 @@
     
     //[self.navigationController.navigationBar setBackgroundColor:[UIColor yellowColor]];
     
-    CalendarController *controller = [CalendarController new];
-    [self.navigationController pushViewController:controller animated:true];
+    //CalendarController *controller = [CalendarController new];
+    //[self.navigationController pushViewController:controller animated:true];
+    
+    PadCalendarController *calendar = [PadCalendarController new];
+    [self.navigationController pushViewController:calendar animated:true];
+
 }
 
 - (void)didReceiveMemoryWarning {

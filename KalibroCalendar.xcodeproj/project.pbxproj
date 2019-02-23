@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F1E59F0222178990024FC56 /* PadCalendarYear.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1E59ED222178990024FC56 /* PadCalendarYear.m */; };
+		7F1E59F1222178990024FC56 /* PadCalendarYearController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1E59EF222178990024FC56 /* PadCalendarYearController.m */; };
+		7F1E59F4222179690024FC56 /* PadCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1E59F3222179690024FC56 /* PadCalendarController.m */; };
 		7F2D9E3321ED15F400AD7F94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3221ED15F400AD7F94 /* main.m */; };
 		7F2D9E3621ED15F400AD7F94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3521ED15F400AD7F94 /* AppDelegate.m */; };
 		7F2D9E3921ED15F400AD7F94 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2D9E3821ED15F400AD7F94 /* ViewController.m */; };
@@ -55,6 +58,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F1E59EC222178990024FC56 /* PadCalendarYear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadCalendarYear.h; sourceTree = "<group>"; };
+		7F1E59ED222178990024FC56 /* PadCalendarYear.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarYear.m; sourceTree = "<group>"; };
+		7F1E59EE222178990024FC56 /* PadCalendarYearController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadCalendarYearController.h; sourceTree = "<group>"; };
+		7F1E59EF222178990024FC56 /* PadCalendarYearController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarYearController.m; sourceTree = "<group>"; };
+		7F1E59F2222179690024FC56 /* PadCalendarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadCalendarController.h; sourceTree = "<group>"; };
+		7F1E59F3222179690024FC56 /* PadCalendarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarController.m; sourceTree = "<group>"; };
 		7F2D9E2E21ED15F400AD7F94 /* KalibroCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KalibroCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F2D9E3221ED15F400AD7F94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7F2D9E3421ED15F400AD7F94 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +168,8 @@
 				7F2D9E3521ED15F400AD7F94 /* AppDelegate.m */,
 				7F2D9E3721ED15F400AD7F94 /* ViewController.h */,
 				7F2D9E3821ED15F400AD7F94 /* ViewController.m */,
+				7F1E59F2222179690024FC56 /* PadCalendarController.h */,
+				7F1E59F3222179690024FC56 /* PadCalendarController.m */,
 				7F66886621ED210A00DE3080 /* CalendarController.m */,
 				7F66889B21F1756F00DE3080 /* sort.png */,
 				7F66889921F1721D00DE3080 /* asc.png */,
@@ -186,6 +197,10 @@
 				7F66887E21EF93F800DE3080 /* PadCustomCalendar.h */,
 				7F66887F21EF943300DE3080 /* PadCustomCalendar.m */,
 				7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */,
+				7F1E59EC222178990024FC56 /* PadCalendarYear.h */,
+				7F1E59ED222178990024FC56 /* PadCalendarYear.m */,
+				7F1E59EE222178990024FC56 /* PadCalendarYearController.h */,
+				7F1E59EF222178990024FC56 /* PadCalendarYearController.m */,
 				7FF74E0D2211DC5700350BD1 /* CustomOrderCell.h */,
 				7F66888321EFE1BA00DE3080 /* PadCustomCalendarLandscape.m */,
 				7F66888521EFE1CA00DE3080 /* PadCustomCalendarLandscape.h */,
@@ -371,11 +386,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F66888021EF943300DE3080 /* PadCustomCalendar.m in Sources */,
+				7F1E59F1222178990024FC56 /* PadCalendarYearController.m in Sources */,
 				7F2D9E3921ED15F400AD7F94 /* ViewController.m in Sources */,
 				7F66887C21EF018000DE3080 /* MonthPickerController.m in Sources */,
 				7F66888D21F0900300DE3080 /* DemoPadDataSource.m in Sources */,
+				7F1E59F4222179690024FC56 /* PadCalendarController.m in Sources */,
 				7F66887621EDAADC00DE3080 /* DimController.m in Sources */,
 				7F66886721ED210A00DE3080 /* CalendarController.m in Sources */,
+				7F1E59F0222178990024FC56 /* PadCalendarYear.m in Sources */,
 				7F2D9E3621ED15F400AD7F94 /* AppDelegate.m in Sources */,
 				7FF74E0C2211DC4600350BD1 /* CustomOrderCell.m in Sources */,
 				7F66889321F09E6800DE3080 /* DemoPadDataSourceLandscape.m in Sources */,
