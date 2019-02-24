@@ -10,8 +10,17 @@
 #define PadCalendarMonthController_h
 
 #import <UIKit/UIKit.h>
+#import "PadCalendarMonth.h"
 
-@interface PadCalendarMonthController : UIViewController
+@interface PadCalendarMonthController : UIViewController<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+
+@property NSMutableArray<PadCalendarMonth *> *monthPages;
+@property NSInteger year;
+@property (strong) UILabel *yearLabel;
+@property CGFloat height;
+@property NSInteger currentIndex;
+
+- (instancetype)initWithDefaultYear:(NSInteger)year height:(CGFloat)height;
 
 @end
 

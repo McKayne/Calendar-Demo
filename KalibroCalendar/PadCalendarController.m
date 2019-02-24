@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "PadCalendarController.h"
 #import "PadCalendarYearController.h"
+#import "PadCalendarMonthController.h"
+#import "PadCalendarWeekController.h"
+#import "PadCalendarDayController.h"
 
 @implementation PadCalendarController
 
@@ -58,10 +61,58 @@
      multiplier:1.0
      constant:-(self.view.frame.size.height - 50.0 - 100.0)].active = YES;
     
-    PadCalendarYearController *yearController = [[PadCalendarYearController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
-    [self addChildViewController:yearController];
-    yearController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
-    [self.view addSubview:yearController.view];
+    [calendarSegments addTarget:self action:@selector(calendarPresentationChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    self.yearController = [[PadCalendarYearController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
+    [self addChildViewController:self.yearController];
+    self.yearController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view addSubview:self.yearController.view];
+    
+    self.monthController = [[PadCalendarMonthController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
+    [self addChildViewController:self.monthController];
+    self.monthController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view addSubview:self.monthController.view];
+    [self.monthController.view setHidden:true];
+    
+    self.weekController = [[PadCalendarWeekController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
+    [self addChildViewController:self.weekController];
+    self.weekController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view addSubview:self.weekController.view];
+    [self.weekController.view setHidden:true];
+    
+    self.dayController = [[PadCalendarDayController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
+    [self addChildViewController:self.dayController];
+    self.dayController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view addSubview:self.dayController.view];
+    [self.dayController.view setHidden:true];
+}
+
+- (void)calendarPresentationChanged:(UISegmentedControl *)segmented {
+    switch (segmented.selectedSegmentIndex) {
+        case 0:
+            [self.dayController.view setHidden:false];
+            [self.weekController.view setHidden:true];
+            [self.monthController.view setHidden:true];
+            [self.yearController.view setHidden:true];
+            break;
+        case 1:
+            [self.dayController.view setHidden:true];
+            [self.weekController.view setHidden:false];
+            [self.monthController.view setHidden:true];
+            [self.yearController.view setHidden:true];
+            break;
+        case 2:
+            [self.dayController.view setHidden:true];
+            [self.weekController.view setHidden:true];
+            [self.monthController.view setHidden:false];
+            [self.yearController.view setHidden:true];
+            break;
+        case 3:
+            [self.dayController.view setHidden:true];
+            [self.weekController.view setHidden:true];
+            [self.monthController.view setHidden:true];
+            [self.yearController.view setHidden:false];
+    }
 }
 
 @end

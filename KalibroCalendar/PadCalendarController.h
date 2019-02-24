@@ -10,10 +10,17 @@
 #define PadCalendarController_h
 
 #import <UIKit/UIKit.h>
+#import "PadCalendarYearController.h"
+#import "PadCalendarMonthController.h"
+#import "PadCalendarWeekController.h"
+#import "PadCalendarDayController.h"
 
 @interface PadCalendarController : UIViewController
 
-
+@property (strong) PadCalendarYearController *yearController;
+@property (strong) PadCalendarMonthController *monthController;
+@property (strong) PadCalendarWeekController *weekController;
+@property (strong) PadCalendarDayController *dayController;
 
 @end
 

@@ -1,18 +1,18 @@
 //
-//  PadCalendarMonthController.m
+//  PadCalendarWeekController.m
 //  KalibroCalendar
 //
-//  Created by для интернета on 17.01.19.
+//  Created by для интернета on 24.02.19.
 //  Copyright © 2019 Nikolay Taran. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "PadCalendarMonthController.h"
-#import "PadCalendarMonth.h"
+#import "PadCalendarWeekController.h"
+#import "PadCalendarWeek.h"
 
 #import <time.h>
 
-@implementation PadCalendarMonthController
+@implementation PadCalendarWeekController
 
 - (instancetype)initWithDefaultYear:(NSInteger)year height:(CGFloat)height {
     self = [super init];
@@ -30,7 +30,7 @@
     self.monthPages = [[NSMutableArray alloc] initWithCapacity:51];
     srand(time(NULL));
     for (int i = 0; i <= 50; i++) {
-        PadCalendarMonth *page = [[PadCalendarMonth alloc] initWithDefaultYear:(2000 + i) height:self.height / 2 controller:self];
+        PadCalendarWeek *page = [[PadCalendarWeek alloc] initWithDefaultYear:(2000 + i) height:self.height - 235.0 controller:self];
         [page.view setBackgroundColor:[UIColor colorWithRed:((rand() % 256) / 255.0) green:((rand() % 256) / 255.0) blue:((rand() % 256) / 255.0) alpha:1.0]];
         self.monthPages[i] = page;
     }
@@ -43,7 +43,7 @@
     self.currentIndex = self.year - 2000;
     [pageView setViewControllers:@[self.monthPages[self.currentIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
     
-    pageView.view.frame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height / 2);
+    pageView.view.frame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height - 120);
     [self addChildViewController:pageView];
     [self.view addSubview:pageView.view];
 }
@@ -52,7 +52,7 @@
     self.yearLabel = [UILabel new];
     [self.yearLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:32]];
     [self.yearLabel setBackgroundColor:[UIColor redColor]];
-    self.yearLabel.text = [NSString stringWithFormat:@"февраль %ld", self.year];
+    self.yearLabel.text = [NSString stringWithFormat:@"%ld", self.year];
     [self.view addSubview:self.yearLabel];
     
     self.yearLabel.translatesAutoresizingMaskIntoConstraints = false;
