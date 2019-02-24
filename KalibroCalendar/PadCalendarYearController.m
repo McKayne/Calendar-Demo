@@ -43,7 +43,7 @@
     self.currentIndex = self.year - 2000;
     [pageView setViewControllers:@[self.monthPages[self.currentIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
     
-    pageView.view.frame = CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height - 120);
+    pageView.view.frame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height - 120);
     [self addChildViewController:pageView];
     [self.view addSubview:pageView.view];
 }
@@ -82,7 +82,7 @@
      toItem:self.view
      attribute:NSLayoutAttributeTopMargin
      multiplier:1.0
-     constant:50.0].active = YES;
+     constant:0.0].active = YES;
     
     [NSLayoutConstraint
      constraintWithItem:self.yearLabel
@@ -91,7 +91,7 @@
      toItem:self.view
      attribute:NSLayoutAttributeBottomMargin
      multiplier:1.0
-     constant:-(self.view.frame.size.height - 50.0 - 120.0)].active = YES;
+     constant:-(self.view.frame.size.height - 120.0)].active = YES;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {

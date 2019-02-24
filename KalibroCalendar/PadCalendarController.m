@@ -60,7 +60,7 @@
     
     PadCalendarYearController *yearController = [[PadCalendarYearController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
     [self addChildViewController:yearController];
-    yearController.view.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height);
+    yearController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:yearController.view];
 }
 
