@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 #import "PadCalendarMonth.h"
 
-@interface PadCalendarMonthController : UIViewController<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface PadCalendarMonthController : UIViewController<UIPageViewControllerDelegate, UIPageViewControllerDataSource, UITableViewDelegate, UITableViewDataSource>
 
 @property NSMutableArray<PadCalendarMonth *> *monthPages;
 @property NSInteger year;
