@@ -46,7 +46,7 @@
     [self addChildViewController:pageView];
     [self.view addSubview:pageView.view];
     
-    UITableView *ordersList = [[UITableView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height / 2 + 7, self.view.frame.size.width, self.view.frame.size.height / 2 - 70)];
+    UITableView *ordersList = [[UITableView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height / 2 + 7, self.view.frame.size.width, self.view.frame.size.height / 2 - 170)];
     ordersList.dataSource = self;
     ordersList.delegate = self;
     [self.view addSubview:ordersList];

@@ -44,6 +44,7 @@
 		7FE6B2A22223CDF100C4CFA7 /* PadCalendarYearDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A12223CDF100C4CFA7 /* PadCalendarYearDay.m */; };
 		7FE6B2A52224268B00C4CFA7 /* ModalOrdersList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A42224268B00C4CFA7 /* ModalOrdersList.m */; };
 		7FE6B2A822242D0F00C4CFA7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A722242D0F00C4CFA7 /* close.png */; };
+		7FE6B2AA2224444900C4CFA7 /* PadCalendarWeekDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A92224444900C4CFA7 /* PadCalendarWeekDay.m */; };
 		7FF74E0C2211DC4600350BD1 /* CustomOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +133,8 @@
 		7FE6B2A42224268B00C4CFA7 /* ModalOrdersList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalOrdersList.m; sourceTree = "<group>"; };
 		7FE6B2A62224269D00C4CFA7 /* ModalOrdersList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalOrdersList.h; sourceTree = "<group>"; };
 		7FE6B2A722242D0F00C4CFA7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = SOURCE_ROOT; };
+		7FE6B2A92224444900C4CFA7 /* PadCalendarWeekDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarWeekDay.m; sourceTree = "<group>"; };
+		7FE6B2AB2224445A00C4CFA7 /* PadCalendarWeekDay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PadCalendarWeekDay.h; sourceTree = "<group>"; };
 		7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOrderCell.m; sourceTree = "<group>"; };
 		7FF74E0D2211DC5700350BD1 /* CustomOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOrderCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,11 +220,13 @@
 				7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */,
 				7F1E59EC222178990024FC56 /* PadCalendarYear.h */,
 				7F1E59ED222178990024FC56 /* PadCalendarYear.m */,
+				7FE6B2A32223CE0000C4CFA7 /* PadCalendarYearDay.h */,
 				7FE6B2A12223CDF100C4CFA7 /* PadCalendarYearDay.m */,
+				7FE6B2A92224444900C4CFA7 /* PadCalendarWeekDay.m */,
+				7FE6B2AB2224445A00C4CFA7 /* PadCalendarWeekDay.h */,
 				7FE6B2A42224268B00C4CFA7 /* ModalOrdersList.m */,
 				7FE6B2A722242D0F00C4CFA7 /* close.png */,
 				7FE6B2A62224269D00C4CFA7 /* ModalOrdersList.h */,
-				7FE6B2A32223CE0000C4CFA7 /* PadCalendarYearDay.h */,
 				7FE6B29B2222DB3700C4CFA7 /* PadCalendarWeek.m */,
 				7FE6B29D2222DB4200C4CFA7 /* PadCalendarWeek.h */,
 				7F1E59EE222178990024FC56 /* PadCalendarYearController.h */,
@@ -438,6 +443,7 @@
 				7FE6B2992222D68900C4CFA7 /* PadCalendarWeekController.m in Sources */,
 				7F66886A21ED23FA00DE3080 /* CustomCalendar.m in Sources */,
 				7F66888721F061FD00DE3080 /* PadDatePickerController.m in Sources */,
+				7FE6B2AA2224444900C4CFA7 /* PadCalendarWeekDay.m in Sources */,
 				7F66887121ED4C8900DE3080 /* CustomSeparator.m in Sources */,
 				7FE6B2A22223CDF100C4CFA7 /* PadCalendarYearDay.m in Sources */,
 				7F66889021F094FF00DE3080 /* PadCalendarMonthController.m in Sources */,

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PadCalendarWeek.h"
 #import "PadCalendarWeekController.h"
+#import "PadCalendarWeekDay.h"
 
 @implementation PadCalendarWeek
 
@@ -26,13 +27,13 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    for (int y = 1; y < 25; y++) {
+    /*for (int y = 1; y < 25; y++) {
         for (int x = 6; x < 8; x++) {
-            UIView *backgroundCell = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 8 * x, self.height / 25 * y, self.view.frame.size.width / 8, self.height / 25)];
-            backgroundCell.backgroundColor = [UIColor colorWithRed:245.0 / 255.0 green:245.0 / 255.0 blue:245.0 / 255.0 alpha:1.0];
+            PadCalendarWeekDay *backgroundCell = [[PadCalendarWeekDay alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 8 * x, self.height / 25 * y, self.view.frame.size.width / 8, self.height / 25)];
+            //backgroundCell.backgroundColor = [UIColor colorWithRed:245.0 / 255.0 green:245.0 / 255.0 blue:245.0 / 255.0 alpha:1.0];
             [self.view addSubview:backgroundCell];
         }
-    }
+    }*/
     for (int x = 0; x < 7; x++) {
         UILabel *dayLabel = [UILabel new];
         [dayLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:20]];
@@ -77,10 +78,15 @@
     
     for (int y = 1; y < 25; y++) {
         for (int x = 1; x < 8; x++) {
-            UILabel *taskLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 8 * x, self.height / 25 * y, self.view.frame.size.width / 8, self.height / 25)];
-            [self.view addSubview:taskLabel];
+            PadCalendarWeekDay *backgroundCell = [[PadCalendarWeekDay alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 8 * x, self.height / 25 * y, self.view.frame.size.width / 8, self.height / 25)];
+            //backgroundCell.backgroundColor = [UIColor colorWithRed:245.0 / 255.0 green:245.0 / 255.0 blue:245.0 / 255.0 alpha:1.0];
+            [self.view addSubview:backgroundCell];
+            backgroundCell.controller = self.calendarController;
             
-            [taskLabel setBackgroundColor:[UIColor colorWithRed:25.0 / 255.0f green:179.0f / 255.0f blue:252.0f / 255.0f alpha:1.0f]];
+            UILabel *taskLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width / 8, self.height / 25)];
+            [backgroundCell addSubview:taskLabel];
+            
+            //[taskLabel setBackgroundColor:[UIColor colorWithRed:25.0 / 255.0f green:179.0f / 255.0f blue:252.0f / 255.0f alpha:1.0f]];
             taskLabel.textColor = [UIColor whiteColor];
             [taskLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:10]];
             [taskLabel setTextAlignment:NSTextAlignmentLeft];

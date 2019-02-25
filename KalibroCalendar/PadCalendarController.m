@@ -81,6 +81,7 @@
     [self.monthController.view setHidden:true];
     
     self.weekController = [[PadCalendarWeekController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
+    self.weekController.controller = self;
     [self addChildViewController:self.weekController];
     self.weekController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:self.weekController.view];

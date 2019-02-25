@@ -15,7 +15,7 @@
 
 @property NSInteger year;
 @property CGFloat height;
-@property UIViewController *controller;
+@property UIViewController *controller, *calendarController;
 
 - (instancetype)initWithDefaultYear:(NSInteger)year height:(CGFloat)height controller:(UIViewController *)controller;
 
