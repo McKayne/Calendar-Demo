@@ -42,6 +42,8 @@
 		7FE6B29C2222DB3700C4CFA7 /* PadCalendarWeek.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B29B2222DB3700C4CFA7 /* PadCalendarWeek.m */; };
 		7FE6B29F2222E25E00C4CFA7 /* PadCalendarDayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B29E2222E25E00C4CFA7 /* PadCalendarDayController.m */; };
 		7FE6B2A22223CDF100C4CFA7 /* PadCalendarYearDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A12223CDF100C4CFA7 /* PadCalendarYearDay.m */; };
+		7FE6B2A52224268B00C4CFA7 /* ModalOrdersList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A42224268B00C4CFA7 /* ModalOrdersList.m */; };
+		7FE6B2A822242D0F00C4CFA7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A722242D0F00C4CFA7 /* close.png */; };
 		7FF74E0C2211DC4600350BD1 /* CustomOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,9 @@
 		7FE6B2A02222E26B00C4CFA7 /* PadCalendarDayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PadCalendarDayController.h; sourceTree = "<group>"; };
 		7FE6B2A12223CDF100C4CFA7 /* PadCalendarYearDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarYearDay.m; sourceTree = "<group>"; };
 		7FE6B2A32223CE0000C4CFA7 /* PadCalendarYearDay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PadCalendarYearDay.h; sourceTree = "<group>"; };
+		7FE6B2A42224268B00C4CFA7 /* ModalOrdersList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalOrdersList.m; sourceTree = "<group>"; };
+		7FE6B2A62224269D00C4CFA7 /* ModalOrdersList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalOrdersList.h; sourceTree = "<group>"; };
+		7FE6B2A722242D0F00C4CFA7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = SOURCE_ROOT; };
 		7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOrderCell.m; sourceTree = "<group>"; };
 		7FF74E0D2211DC5700350BD1 /* CustomOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOrderCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +218,9 @@
 				7F1E59EC222178990024FC56 /* PadCalendarYear.h */,
 				7F1E59ED222178990024FC56 /* PadCalendarYear.m */,
 				7FE6B2A12223CDF100C4CFA7 /* PadCalendarYearDay.m */,
+				7FE6B2A42224268B00C4CFA7 /* ModalOrdersList.m */,
+				7FE6B2A722242D0F00C4CFA7 /* close.png */,
+				7FE6B2A62224269D00C4CFA7 /* ModalOrdersList.h */,
 				7FE6B2A32223CE0000C4CFA7 /* PadCalendarYearDay.h */,
 				7FE6B29B2222DB3700C4CFA7 /* PadCalendarWeek.m */,
 				7FE6B29D2222DB4200C4CFA7 /* PadCalendarWeek.h */,
@@ -385,6 +393,7 @@
 				7F2D9E3C21ED15F400AD7F94 /* Main.storyboard in Resources */,
 				7F66889A21F1721D00DE3080 /* asc.png in Resources */,
 				7F66888221EFC17400DE3080 /* accept.png in Resources */,
+				7FE6B2A822242D0F00C4CFA7 /* close.png in Resources */,
 				7F66886D21ED3C5700DE3080 /* SF-Pro-Display-Ultralight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +429,7 @@
 				7F66887621EDAADC00DE3080 /* DimController.m in Sources */,
 				7F66886721ED210A00DE3080 /* CalendarController.m in Sources */,
 				7F1E59F0222178990024FC56 /* PadCalendarYear.m in Sources */,
+				7FE6B2A52224268B00C4CFA7 /* ModalOrdersList.m in Sources */,
 				7F2D9E3621ED15F400AD7F94 /* AppDelegate.m in Sources */,
 				7FF74E0C2211DC4600350BD1 /* CustomOrderCell.m in Sources */,
 				7F66889321F09E6800DE3080 /* DemoPadDataSourceLandscape.m in Sources */,

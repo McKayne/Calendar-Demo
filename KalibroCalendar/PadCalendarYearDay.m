@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "PadCalendarYearDay.h"
+#import "ModalOrdersList.h"
 
 @implementation PadCalendarYearDay
 
-- (instancetype)initWithDay:(NSInteger)day frame:(CGRect)frame isTodayDay:(BOOL)isTodayDay {
+- (instancetype)initWithDay:(NSInteger)year month:(NSInteger)month day:(NSInteger)day frame:(CGRect)frame isTodayDay:(BOOL)isTodayDay {
     self = [super initWithFrame:frame];
+    
+    self.currentYear = year;
+    self.currentMonth = month;
+    self.currentDay = day;
+    
     self.isSelected = false;
     self.isWeekend = false;
     self.isToday = false;
@@ -39,6 +45,18 @@
             }
         }
     }
+    
+    UIViewController *dim = [UIViewController new];
+    [dim.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+    [self.controller.view addSubview:dim.view];
+    
+    ModalOrdersList *orders = [[ModalOrdersList alloc] initWithDate:self.currentYear month:self.currentMonth day:self.currentDay frame:self.controller.view.frame];
+    orders.dim = dim;
+    //year.calendar = self.calendar;
+    orders.view.frame = CGRectMake(self.controller.view.frame.size.width / 4 / 2, self.controller.view.frame.size.height / 4 / 2, self.controller.view.frame.size.width * 3 / 4, self.controller.view.frame.size.height * 3 / 4);
+    orders.view.layer.cornerRadius = 20.0;
+    [self.controller.view addSubview:orders.view];
+    [self.controller addChildViewController:orders];
     
     NSLog(@"DAY SELECTED");
 }

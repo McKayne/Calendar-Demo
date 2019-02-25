@@ -219,24 +219,25 @@
                         PadCalendarYearDay *dayView;
                         if (i % 3 == 0) {
                             if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
-                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1), self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:self.year month:(i + 1) day:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1), self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
                             } else {
-                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1), self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:self.year month:(i + 1) day:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1), self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
                             }
                         } else if (i % 3 == 1) {
                             if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
-                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:self.year month:(i + 1) day:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
                             } else {
-                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:self.year month:(i + 1) day:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
                             }
                         } else {
                             if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
-                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width * 2 / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:self.year month:(i + 1) day:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width * 2 / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
                             } else {
-                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width * 2 / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:self.year month:(i + 1) day:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width * 2 / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
                             }
                         }
                         
+                        dayView.controller = self.calendarController;
                         dayView.year = self;
                         self.dayArr[dayNth++] = dayView;
                         

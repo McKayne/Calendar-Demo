@@ -69,6 +69,7 @@
     [calendarSegments addTarget:self action:@selector(calendarPresentationChanged:) forControlEvents:UIControlEventValueChanged];
     
     self.yearController = [[PadCalendarYearController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
+    self.yearController.controller = self;
     [self addChildViewController:self.yearController];
     self.yearController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:self.yearController.view];

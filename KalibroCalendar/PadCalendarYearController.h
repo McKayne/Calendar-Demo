@@ -14,6 +14,7 @@
 
 @interface PadCalendarYearController : UIViewController<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
+@property (strong) UIViewController *controller;
 @property NSMutableArray<PadCalendarYear *> *monthPages;
 @property NSInteger year;
 @property (strong) UILabel *yearLabel;

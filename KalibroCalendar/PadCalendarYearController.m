@@ -32,6 +32,7 @@
     srand(time(NULL));
     for (int i = 0; i <= 50; i++) {
         PadCalendarYear *page = [[PadCalendarYear alloc] initWithDefaultYear:(2000 + i) height:self.height - 235.0 controller:self];
+        page.calendarController = self.controller;
         self.monthPages[i] = page;
     }
     

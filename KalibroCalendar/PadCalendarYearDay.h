@@ -11,14 +11,18 @@
 
 #import <UIKit/UIKit.h>
 #import "PadCalendarYear.h"
+#import "PadCalendarController.h"
 
 @interface PadCalendarYearDay : UIView
 
+@property NSInteger currentYear, currentMonth, currentDay;
+
+@property (strong) PadCalendarController *controller;
 @property (strong) PadCalendarYear *year;
 @property BOOL isSelected, isWeekend, isToday;
 @property (strong) UILabel *dayLabel;
 
-- (instancetype)initWithDay:(NSInteger) day frame:(CGRect)frame isTodayDay:(BOOL)isTodayDay;
+- (instancetype)initWithDay:(NSInteger)year month:(NSInteger)month day:(NSInteger) day frame:(CGRect)frame isTodayDay:(BOOL)isTodayDay;
 
 @end
 
