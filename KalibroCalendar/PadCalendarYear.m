@@ -54,13 +54,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     for (int i = 0; i < 12; i++) {
         UILabel *monthLabel = [UILabel new];
         [monthLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:20]];
         [monthLabel setTextAlignment:NSTextAlignmentCenter];
         [monthLabel setTextColor:[UIColor redColor]];
-        [monthLabel setBackgroundColor:[UIColor yellowColor]];
+        //[monthLabel setBackgroundColor:[UIColor yellowColor]];
         switch (i) {
             case 0:
                 monthLabel.text = @"январь";
@@ -155,7 +156,7 @@
                     UILabel *dayLabel = [UILabel new];
                     [dayLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:16]];
                     [dayLabel setTextAlignment:NSTextAlignmentCenter];
-                    [dayLabel setBackgroundColor:[UIColor yellowColor]];
+                    //[dayLabel setBackgroundColor:[UIColor yellowColor]];
                     [dayLabel setTextColor:[UIColor lightGrayColor]];
                     switch (x) {
                         case 0:
@@ -221,7 +222,7 @@
                     if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
                         [dayLabel setTextColor:[UIColor redColor]];
                     }
-                    [dayLabel setBackgroundColor:[UIColor yellowColor]];
+                    //[dayLabel setBackgroundColor:[UIColor yellowColor]];
                     if (nthDay >= skipDays && day <= totalDays) {
                         [dayLabel setText:[NSString stringWithFormat:@"%ld", day]];
                         day++;
@@ -229,13 +230,13 @@
                         if (i % 3 == 0) {
                         CustomOrderIndicator *indicator = [[CustomOrderIndicator alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3 / 9 / 2 - 2.5 - 10, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4 + 20, 5, 5)];
                         indicatorsArray[numberOfIndicators] = indicator;
-                        numberOfIndicators++;
-                        [self.view addSubview:indicator];
+                        //numberOfIndicators++;
+                        //[self.view addSubview:indicator];
                         
                         CustomOrderIndicator *indicator2 = [[CustomOrderIndicator alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3 / 9 / 2 - 2.5 + 10, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4 + 20, 5, 5)];
                         indicatorsArray[numberOfIndicators] = indicator2;
-                        numberOfIndicators++;
-                        [self.view addSubview:indicator2];
+                        //numberOfIndicators++;
+                        //[self.view addSubview:indicator2];
                         }
                     }
                     nthDay++;

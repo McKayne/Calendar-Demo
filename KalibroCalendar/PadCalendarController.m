@@ -17,10 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Календарь";
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"сегодня" style:UIBarButtonItemStylePlain target:nil action:nil];
+    
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    UISegmentedControl *calendarSegments = [[UISegmentedControl alloc] initWithItems:@[@"День", @"Неделя", @"Месяц", @"Год"]];
-    [calendarSegments setSelectedSegmentIndex:3];
+    UISegmentedControl *calendarSegments = [[UISegmentedControl alloc] initWithItems:@[@"Неделя", @"Месяц", @"Год"]];
+    [calendarSegments setSelectedSegmentIndex:2];
     [calendarSegments setTintColor:[UIColor blackColor]];
     [self.view addSubview:calendarSegments];
     calendarSegments.translatesAutoresizingMaskIntoConstraints = false;
@@ -79,36 +84,21 @@
     self.weekController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:self.weekController.view];
     [self.weekController.view setHidden:true];
-    
-    self.dayController = [[PadCalendarDayController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
-    [self addChildViewController:self.dayController];
-    self.dayController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
-    [self.view addSubview:self.dayController.view];
-    [self.dayController.view setHidden:true];
 }
 
 - (void)calendarPresentationChanged:(UISegmentedControl *)segmented {
     switch (segmented.selectedSegmentIndex) {
         case 0:
-            [self.dayController.view setHidden:false];
-            [self.weekController.view setHidden:true];
-            [self.monthController.view setHidden:true];
-            [self.yearController.view setHidden:true];
-            break;
-        case 1:
-            [self.dayController.view setHidden:true];
             [self.weekController.view setHidden:false];
             [self.monthController.view setHidden:true];
             [self.yearController.view setHidden:true];
             break;
-        case 2:
-            [self.dayController.view setHidden:true];
+        case 1:
             [self.weekController.view setHidden:true];
             [self.monthController.view setHidden:false];
             [self.yearController.view setHidden:true];
             break;
-        case 3:
-            [self.dayController.view setHidden:true];
+        case 2:
             [self.weekController.view setHidden:true];
             [self.monthController.view setHidden:true];
             [self.yearController.view setHidden:false];

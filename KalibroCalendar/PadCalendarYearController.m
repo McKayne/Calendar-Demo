@@ -25,13 +25,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     [self appendYearLabel];
     
     self.monthPages = [[NSMutableArray alloc] initWithCapacity:51];
     srand(time(NULL));
     for (int i = 0; i <= 50; i++) {
         PadCalendarYear *page = [[PadCalendarYear alloc] initWithDefaultYear:(2000 + i) height:self.height - 235.0 controller:self];
-        [page.view setBackgroundColor:[UIColor colorWithRed:((rand() % 256) / 255.0) green:((rand() % 256) / 255.0) blue:((rand() % 256) / 255.0) alpha:1.0]];
         self.monthPages[i] = page;
     }
     
@@ -51,7 +51,7 @@
 - (void)appendYearLabel {
     self.yearLabel = [UILabel new];
     [self.yearLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:32]];
-    [self.yearLabel setBackgroundColor:[UIColor redColor]];
+    //[self.yearLabel setBackgroundColor:[UIColor redColor]];
     self.yearLabel.text = [NSString stringWithFormat:@"%ld", self.year];
     [self.view addSubview:self.yearLabel];
     
@@ -64,7 +64,7 @@
      toItem:self.view
      attribute:NSLayoutAttributeLeftMargin
      multiplier:1.0
-     constant:0.0].active = YES;
+     constant:12.5].active = YES;
     
     [NSLayoutConstraint
      constraintWithItem:self.yearLabel
