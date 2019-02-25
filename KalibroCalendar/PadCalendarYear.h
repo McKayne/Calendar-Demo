@@ -13,6 +13,7 @@
 
 @interface PadCalendarYear : UIViewController
 
+@property NSMutableArray *dayArr;
 @property NSInteger year;
 @property CGFloat height;
 @property UIViewController *controller;

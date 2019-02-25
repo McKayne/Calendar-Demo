@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PadCalendarYear.h"
 #import "PadCalendarYearController.h"
+#import "PadCalendarYearDay.h"
 
 @interface CustomOrderIndicator : UIView
 
@@ -55,6 +56,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+    self.dayArr = [[NSMutableArray alloc] initWithCapacity:2000];
+    NSInteger dayNth = 0;
     
     for (int i = 0; i < 12; i++) {
         UILabel *monthLabel = [UILabel new];
@@ -210,21 +214,44 @@
                 }
             } else {
                 for (int x = 0; x < 7; x++) {
-                    UILabel *dayLabel = [UILabel new];
-                    [dayLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:16]];
-                    [dayLabel setTextAlignment:NSTextAlignmentCenter];
-                    if (x < 5) {
-                        [dayLabel setTextColor:[UIColor blackColor]];
-                    } else {
-                        [dayLabel setTextColor:[UIColor lightGrayColor]];
-                    }
-                    
-                    if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
-                        [dayLabel setTextColor:[UIColor redColor]];
-                    }
-                    //[dayLabel setBackgroundColor:[UIColor yellowColor]];
                     if (nthDay >= skipDays && day <= totalDays) {
-                        [dayLabel setText:[NSString stringWithFormat:@"%ld", day]];
+                       
+                        PadCalendarYearDay *dayView;
+                        if (i % 3 == 0) {
+                            if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1), self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
+                            } else {
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1), self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
+                            }
+                        } else if (i % 3 == 1) {
+                            if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
+                            } else {
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
+                            }
+                        } else {
+                            if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width * 2 / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:true];
+                            } else {
+                                dayView = [[PadCalendarYearDay alloc] initWithDay:day frame:CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width * 2 / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9) isTodayDay:false];
+                            }
+                        }
+                        
+                        dayView.year = self;
+                        self.dayArr[dayNth++] = dayView;
+                        
+                        dayView.dayLabel.frame = CGRectMake(0, 0, self.view.frame.size.width / 3 / 9, self.height / 4 / 9);
+                        
+                        [dayView.dayLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
+                        [dayView.dayLabel setTextAlignment:NSTextAlignmentCenter];
+                        if (x >= 5) {
+                            [dayView setIsWeekend:true];
+                        }
+                        if (todayYear == self.year && todayMonth == i + 1 && todayDay == day) {
+                            [dayView setIsToday:true];
+                        }
+                        
+                        [dayView.dayLabel setText:[NSString stringWithFormat:@"%ld", day]];
                         day++;
                     
                         if (i % 3 == 0) {
@@ -238,19 +265,12 @@
                         //numberOfIndicators++;
                         //[self.view addSubview:indicator2];
                         }
+                        
+                        [self.view addSubview:dayView];
                     }
                     nthDay++;
-                    [self.view addSubview:dayLabel];
                     
-                    if (i % 3 == 0) {
-                        dayLabel.frame = CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1), self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9);
-                        
-                        
-                    } else if (i % 3 == 1) {
-                        dayLabel.frame = CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9);
-                    } else {
-                        dayLabel.frame = CGRectMake(self.view.frame.size.width / 3 / 9 * (x + 1) + self.view.frame.size.width * 2 / 3, self.height / 4 / 9 * (y + 1) + self.height * (i / 3) / 4, self.view.frame.size.width / 3 / 9, self.height / 4 / 9);
-                    }
+                    
                 }
             }
         }
