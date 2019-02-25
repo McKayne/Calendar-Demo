@@ -67,13 +67,28 @@
     }
     for (int y = 0; y < 24; y++) {
         UILabel *hourLabel = [UILabel new];
-        [hourLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:20]];
+        [hourLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:16]];
         hourLabel.textAlignment = NSTextAlignmentRight;
         hourLabel.textColor = [UIColor colorWithRed:135.0 / 255.0 green:135.0 / 255.0 blue:135.0 / 255.0 alpha:1.0];
         hourLabel.text = [NSString stringWithFormat:@"%d:00", y];
         hourLabel.frame = CGRectMake(-self.view.frame.size.width / 8 / 8, self.height / 25 * (y + 1), self.view.frame.size.width / 8, self.height / 25);
         [self.view addSubview:hourLabel];
     }
+    
+    for (int y = 1; y < 25; y++) {
+        for (int x = 1; x < 8; x++) {
+            UILabel *taskLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 8 * x, self.height / 25 * y, self.view.frame.size.width / 8, self.height / 25)];
+            [self.view addSubview:taskLabel];
+            
+            [taskLabel setBackgroundColor:[UIColor colorWithRed:25.0 / 255.0f green:179.0f / 255.0f blue:252.0f / 255.0f alpha:1.0f]];
+            taskLabel.textColor = [UIColor whiteColor];
+            [taskLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:10]];
+            [taskLabel setTextAlignment:NSTextAlignmentLeft];
+            taskLabel.numberOfLines = 0;
+            [taskLabel setText:@"  Замерить потолки\n  до 18:40"];
+        }
+    }
+    
     for (int y = 1; y < 25; y++) {
         UIView *horizontal = [[UIView alloc] initWithFrame:CGRectMake(0, self.height / 25 * y - 1, self.view.frame.size.width, 1)];
         horizontal.backgroundColor = [UIColor colorWithRed:199.0 / 255.0 green:198.0 / 255.0 blue:204.0 / 255.0 alpha:1.0];
