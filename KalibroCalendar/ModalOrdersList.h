@@ -11,7 +11,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ModalOrdersList : UIViewController
+@interface ModalOrdersList : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong) UIViewController *dim;
 @property NSInteger year, month, day;
