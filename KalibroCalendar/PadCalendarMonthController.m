@@ -29,8 +29,8 @@
     
     self.monthPages = [[NSMutableArray alloc] initWithCapacity:51];
     srand(time(NULL));
-    for (int i = 0; i <= 50; i++) {
-        PadCalendarMonth *page = [[PadCalendarMonth alloc] initWithDefaultYear:(2000 + i) height:self.height / 2 controller:self];
+    for (int i = 0; i < 12; i++) {
+        PadCalendarMonth *page = [[PadCalendarMonth alloc] initWithDefaultYear:2017 month:(i + 1) height:self.height / 2 controller:self];
         self.monthPages[i] = page;
     }
     
@@ -39,7 +39,7 @@
     pageView.delegate = self;
     pageView.dataSource = self;
     
-    self.currentIndex = self.year - 2000;
+    self.currentIndex = 1;
     [pageView setViewControllers:@[self.monthPages[self.currentIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
     
     pageView.view.frame = CGRectMake(0, 70, self.view.frame.size.width, self.view.frame.size.height / 2);

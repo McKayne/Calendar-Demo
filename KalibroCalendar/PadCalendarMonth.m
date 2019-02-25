@@ -12,9 +12,10 @@
 
 @implementation PadCalendarMonth
 
-- (instancetype)initWithDefaultYear:(NSInteger)year height:(CGFloat)height controller:(UIViewController *)controller {
+- (instancetype)initWithDefaultYear:(NSInteger)year month:(NSInteger)month height:(CGFloat)height controller:(UIViewController *)controller {
     self = [super init];
     self.year = year;
+    self.month = month;
     self.height = height;
     self.controller = controller;
     return self;
@@ -26,7 +27,42 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    NSInteger day = 1, skipDays = 2, totalDays = 30, nthDay = 0;
+    NSCalendar *c = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    int year = self.year;
+    int month = self.month;
+    
+    NSString *dateString;
+    if (month >= 10) {
+        dateString = [NSString stringWithFormat:@"%d-%d-0%d", year, month, 1];
+        
+    } else {
+        dateString = [NSString stringWithFormat:@"%d-0%d-0%d", year, month, 1];
+        
+    }
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [formatter dateFromString:dateString];
+    NSDateComponents *comps = [c components:NSWeekdayCalendarUnit fromDate:date];
+    
+    NSRange range = [c rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
+    
+    NSDateFormatter *yearFormatter = [[NSDateFormatter alloc] init];
+    [yearFormatter setDateFormat:@"yyyy"];
+    NSDateFormatter *monthFormatter = [[NSDateFormatter alloc] init];
+    [monthFormatter setDateFormat:@"MM"];
+    NSDateFormatter *dayFormatter = [[NSDateFormatter alloc] init];
+    [dayFormatter setDateFormat:@"dd"];
+    
+    NSInteger todayYear = [[yearFormatter stringFromDate:[NSDate new]] integerValue];
+    NSInteger todayMonth = [[monthFormatter stringFromDate:[NSDate new]] integerValue];
+    NSInteger todayDay = [[dayFormatter stringFromDate:[NSDate new]] integerValue];
+    //NSLog(@"%ld", todayYear);
+    //NSLog(@"%ld", todayMonth);
+    //NSLog(@"%ld", todayDay);
+    
+    NSInteger day = 1, skipDays = [comps weekday] - 2, totalDays = range.length, nthDay = 0;
     for (int y = 0; y < 7; y++) {
         if (y == 0) {
             for (int x = 0; x < 7; x++) {
@@ -110,7 +146,43 @@
     [super viewDidAppear:animated];
     
     PadCalendarMonthController *controller = self.controller;
-    controller.yearLabel.text = [NSString stringWithFormat:@"февраль %ld", self.year];
+    switch (self.month) {
+        case 1:
+            controller.yearLabel.text = [NSString stringWithFormat:@"январь %ld", self.year];
+            break;
+        case 2:
+            controller.yearLabel.text = [NSString stringWithFormat:@"февраль %ld", self.year];
+            break;
+        case 3:
+            controller.yearLabel.text = [NSString stringWithFormat:@"март %ld", self.year];
+            break;
+        case 4:
+            controller.yearLabel.text = [NSString stringWithFormat:@"апрель %ld", self.year];
+            break;
+        case 5:
+            controller.yearLabel.text = [NSString stringWithFormat:@"май %ld", self.year];
+            break;
+        case 6:
+            controller.yearLabel.text = [NSString stringWithFormat:@"июнь %ld", self.year];
+            break;
+        case 7:
+            controller.yearLabel.text = [NSString stringWithFormat:@"июль %ld", self.year];
+            break;
+        case 8:
+            controller.yearLabel.text = [NSString stringWithFormat:@"август %ld", self.year];
+            break;
+        case 9:
+            controller.yearLabel.text = [NSString stringWithFormat:@"сентябрь %ld", self.year];
+            break;
+        case 10:
+            controller.yearLabel.text = [NSString stringWithFormat:@"октябрь %ld", self.year];
+            break;
+        case 11:
+            controller.yearLabel.text = [NSString stringWithFormat:@"ноябрь %ld", self.year];
+            break;
+        case 12:
+            controller.yearLabel.text = [NSString stringWithFormat:@"декабрь %ld", self.year];
+    }
 }
 
 @end

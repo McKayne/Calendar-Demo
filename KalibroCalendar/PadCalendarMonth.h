@@ -13,11 +13,11 @@
 
 @interface PadCalendarMonth : UIViewController
 
-@property NSInteger year;
+@property NSInteger year, month;
 @property CGFloat height;
 @property UIViewController *controller;
 
-- (instancetype)initWithDefaultYear:(NSInteger)year height:(CGFloat)height controller:(UIViewController *)controller;
+- (instancetype)initWithDefaultYear:(NSInteger)year month:(NSInteger)month height:(CGFloat)height controller:(UIViewController *)controller;
 
 @end
 
