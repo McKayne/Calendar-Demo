@@ -1,20 +1,21 @@
 //
 //  PadDatePickerController.h
-//  KalibroCalendar
+//  CeilingsAPI
 //
-//  Created by для интернета on 17.01.19.
-//  Copyright © 2019 Nikolay Taran. All rights reserved.
+//  Created by user914135 on 2/3/19.
+//  Copyright © 2019 BinomTech. All rights reserved.
 //
 
 #ifndef PadDatePickerController_h
 #define PadDatePickerController_h
 
 #import <UIKit/UIKit.h>
-#import "CalendarController.h"
+#import "PadCalendarController.h"
 
 @interface PadDatePickerController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (strong) CalendarController *calendar;
+@property int day, month, year;
+@property (strong) PadCalendarController *controller;
 @property (strong) UIPickerView *picker;
 @property (strong) NSArray *months;
 

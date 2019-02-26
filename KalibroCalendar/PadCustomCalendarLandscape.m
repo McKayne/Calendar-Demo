@@ -288,7 +288,7 @@
     [self addSubview:self.calendar.dim.view];
     
     PadDatePickerController *picker = [PadDatePickerController new];
-    picker.calendar = self.calendar;
+    //picker.calendar = self.calendar;
     picker.view.frame = CGRectMake(self.calendar.view.frame.size.width / 2 - 250, self.calendar.view.frame.size.height / 2 - 125, 500, 250);
     picker.view.layer.cornerRadius = 20.0;
     [self addSubview:picker.view];

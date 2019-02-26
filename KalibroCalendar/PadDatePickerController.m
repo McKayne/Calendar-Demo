@@ -74,18 +74,18 @@
 - (void)openMonthPicker:(UIButton *)sender {
     NSLog(@"Month");
     
-    [self.view removeFromSuperview];
+    /*[self.view removeFromSuperview];
     MonthPickerController *month = [MonthPickerController new];
     month.calendar = self.calendar;
     month.view.frame = CGRectMake(self.calendar.view.frame.size.width / 2 - 125, self.calendar.view.frame.size.height / 2 - 125, 250, 250);
     month.view.layer.cornerRadius = 20.0;
     [self.calendar.view addSubview:month.view];
-    [self.calendar addChildViewController:month];
+    [self.calendar addChildViewController:month];*/
 }
 
 - (void)cancelAction:(UIButton *)sender {
     [self.view removeFromSuperview];
-    [self.calendar.dim.view removeFromSuperview];
+    //[self.calendar.dim.view removeFromSuperview];
 }
 
 @end

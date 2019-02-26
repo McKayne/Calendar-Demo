@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PadCalendarWeekController.h"
 #import "PadCalendarWeek.h"
+#import "PadDatePickerController.h"
 
 #import <time.h>
 
@@ -21,6 +22,19 @@
     
     
     return self;
+}
+
+- (void)openDatePicker:(UITapGestureRecognizer *)recognizer {
+    UIViewController *dim = [UIViewController new];
+    [dim.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+    [self.controller.view addSubview:dim.view];
+    
+    PadDatePickerController *year = [PadDatePickerController new];
+    //year.calendar = self.calendar;
+    year.view.frame = CGRectMake(self.controller.view.frame.size.width / 2 - 250, self.controller.view.frame.size.height / 2 - 125, 500, 250);
+    year.view.layer.cornerRadius = 20.0;
+    [self.controller.view addSubview:year.view];
+    [self.controller addChildViewController:year];
 }
 
 - (void)viewDidLoad {
@@ -57,6 +71,8 @@
     [self.yearLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:32]];
     //[self.yearLabel setBackgroundColor:[UIColor redColor]];
     self.yearLabel.text = [NSString stringWithFormat:@"%ld", self.year];
+    [self.yearLabel setUserInteractionEnabled:true];
+    [self.yearLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openDatePicker:)]];
     [self.view addSubview:self.yearLabel];
     
     self.yearLabel.translatesAutoresizingMaskIntoConstraints = false;
