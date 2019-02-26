@@ -87,6 +87,11 @@
 - (void)openMonthPicker:(UIButton *)sender {
     NSLog(@"Month");
     
+    if (self.yearController != nil) {
+        self.yearController.currentIndex = [self.picker selectedRowInComponent:2];
+        [self.yearController.pageView setViewControllers:@[self.yearController.monthPages[self.yearController.currentIndex]] direction:UIPageViewControllerNavigationDirectionForward animated:true completion:nil];
+    }
+    
     [self.view removeFromSuperview];
     
     ModalOrdersList *orders = [[ModalOrdersList alloc] initWithDate:[self.picker selectedRowInComponent:2] + 2000 month:[self.picker selectedRowInComponent:1] + 1 day:[self.picker selectedRowInComponent:0] + 1 frame:self.controller.view.frame];

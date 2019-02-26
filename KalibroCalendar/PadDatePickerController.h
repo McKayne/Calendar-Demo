@@ -12,7 +12,11 @@
 #import <UIKit/UIKit.h>
 #import "PadCalendarController.h"
 
+#import "PadCalendarYearController.h"
+
 @interface PadDatePickerController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
+
+@property (strong) PadCalendarYearController *yearController;
 
 @property (strong) UIViewController *dim;
 @property int day, month, year;
