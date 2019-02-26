@@ -75,6 +75,7 @@
     [self.view addSubview:self.yearController.view];
     
     self.monthController = [[PadCalendarMonthController alloc] initWithDefaultYear:2019 height:self.view.frame.size.height];
+    self.monthController.controller = self;
     [self addChildViewController:self.monthController];
     self.monthController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:self.monthController.view];

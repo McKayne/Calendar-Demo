@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "PadCalendarMonthController.h"
 #import "PadCalendarMonth.h"
+#import "PadCalendarSortController.h"
+#import "PadCalendarAscController.h"
 
 #import <time.h>
 
@@ -23,6 +25,36 @@
     return self;
 }
 
+- (void)openSortController:(UITapGestureRecognizer *)recognizer {
+    UIViewController *dim = [UIViewController new];
+    [dim.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+    [self.controller.view addSubview:dim.view];
+    
+    PadCalendarSortController *asc = [PadCalendarSortController new];
+    //self.ascModal = asc;
+    //asc.controller = self;
+    asc.view.frame = CGRectMake(self.controller.view.frame.size.width / 2 - 125, self.controller.view.frame.size.height / 2 - 125, 250, 250);
+    asc.view.layer.cornerRadius = 20.0;
+    [self.controller.view addSubview:asc.view];
+    [self.controller addChildViewController:asc];
+    
+}
+
+- (void)openAscController:(UITapGestureRecognizer *)recognizer {
+    UIViewController *dim = [UIViewController new];
+    [dim.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+    [self.controller.view addSubview:dim.view];
+    
+    PadCalendarAscController *asc = [PadCalendarAscController new];
+    //self.ascModal = asc;
+    //asc.controller = self;
+    asc.view.frame = CGRectMake(self.controller.view.frame.size.width / 2 - 125, self.controller.view.frame.size.height / 2 - 125, 250, 250);
+    asc.view.layer.cornerRadius = 20.0;
+    [self.controller.view addSubview:asc.view];
+    [self.controller addChildViewController:asc];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self appendYearLabel];
@@ -30,6 +62,18 @@
     UIImageView *refreshView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 75, 0, 50, 50)];
     refreshView.image = [UIImage imageNamed:@"refresh.png"];
     [self.view addSubview:refreshView];
+    
+    UIImageView *sortView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width * 3 / 4 - 75, 0, 50, 50)];
+    sortView.image = [UIImage imageNamed:@"sort.png"];
+    [sortView setUserInteractionEnabled:true];
+    [sortView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openSortController:)]];
+    [self.view addSubview:sortView];
+    
+    UIImageView *ascView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 75, 0, 50, 50)];
+    ascView.image = [UIImage imageNamed:@"asc.png"];
+    [ascView setUserInteractionEnabled:true];
+    [ascView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openAscController:)]];
+    [self.view addSubview:ascView];
     
     self.monthPages = [[NSMutableArray alloc] initWithCapacity:51];
     srand(time(NULL));

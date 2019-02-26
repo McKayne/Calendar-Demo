@@ -52,6 +52,7 @@
     
     ModalOrdersList *orders = [[ModalOrdersList alloc] initWithDate:self.currentYear month:self.currentMonth day:self.currentDay frame:self.controller.view.frame];
     orders.dim = dim;
+    orders.calendarController = self.controller;
     //year.calendar = self.calendar;
     orders.view.frame = CGRectMake(self.controller.view.frame.size.width / 4 / 2, self.controller.view.frame.size.height / 4 / 2, self.controller.view.frame.size.width * 3 / 4, self.controller.view.frame.size.height * 3 / 4);
     orders.view.layer.cornerRadius = 20.0;

@@ -13,7 +13,7 @@
 
 @interface ModalOrdersList : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
-@property (strong) UIViewController *dim;
+@property (strong) UIViewController *dim, *calendarController;
 @property NSInteger year, month, day;
 @property CGRect frame;
 

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ModalOrdersList.h"
+#import "PadCalendarSortController.h"
+#import "PadCalendarAscController.h"
 
 @implementation ModalOrdersList
 
@@ -22,6 +24,36 @@
     return self;
 }
 
+- (void)openSortController:(UITapGestureRecognizer *)recognizer {
+    UIViewController *dim = [UIViewController new];
+    [dim.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+    [self.calendarController.view addSubview:dim.view];
+    
+    PadCalendarSortController *asc = [PadCalendarSortController new];
+    //self.ascModal = asc;
+    //asc.controller = self;
+    asc.view.frame = CGRectMake(self.calendarController.view.frame.size.width / 2 - 125, self.calendarController.view.frame.size.height / 2 - 125, 250, 250);
+    asc.view.layer.cornerRadius = 20.0;
+    [self.calendarController.view addSubview:asc.view];
+    [self.calendarController addChildViewController:asc];
+    
+}
+
+- (void)openAscController:(UITapGestureRecognizer *)recognizer {
+    UIViewController *dim = [UIViewController new];
+    [dim.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+    [self.calendarController.view addSubview:dim.view];
+    
+    PadCalendarAscController *asc = [PadCalendarAscController new];
+    //self.ascModal = asc;
+    //asc.controller = self;
+    asc.view.frame = CGRectMake(self.calendarController.view.frame.size.width / 2 - 125, self.calendarController.view.frame.size.height / 2 - 125, 250, 250);
+    asc.view.layer.cornerRadius = 20.0;
+    [self.calendarController.view addSubview:asc.view];
+    [self.calendarController addChildViewController:asc];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -34,10 +66,14 @@
     
     UIImageView *sortView = [[UIImageView alloc] initWithFrame:CGRectMake(75, self.frame.size.height * 3 / 4 - 75, 50, 50)];
     sortView.image = [UIImage imageNamed:@"sort.png"];
+    [sortView setUserInteractionEnabled:true];
+    [sortView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openSortController:)]];
     [self.view addSubview:sortView];
     
     UIImageView *ascView = [[UIImageView alloc] initWithFrame:CGRectMake(currentWidth - 100, self.frame.size.height * 3 / 4 - 75, 50, 50)];
     ascView.image = [UIImage imageNamed:@"asc.png"];
+    [ascView setUserInteractionEnabled:true];
+    [ascView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openAscController:)]];
     [self.view addSubview:ascView];
     
     UIImageView *closeView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width * 3 / 4 - 100, 25, 50, 50)];
