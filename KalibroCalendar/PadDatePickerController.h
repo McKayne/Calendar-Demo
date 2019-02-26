@@ -14,6 +14,7 @@
 
 @interface PadDatePickerController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 
+@property (strong) UIViewController *dim;
 @property int day, month, year;
 @property (strong) PadCalendarController *controller;
 @property (strong) UIPickerView *picker;

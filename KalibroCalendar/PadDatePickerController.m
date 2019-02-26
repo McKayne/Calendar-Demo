@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "PadDatePickerController.h"
 #import "MonthPickerController.h"
+#import "ModalOrdersList.h"
 
 @implementation PadDatePickerController
 
@@ -29,6 +30,18 @@
     [self.view addSubview:self.picker];
     self.picker.delegate = self;
     self.picker.dataSource = self;
+    
+    NSDate *today = [NSDate new];
+    NSDateFormatter *yearFormatter = [NSDateFormatter new];
+    NSDateFormatter *monthFormatter = [NSDateFormatter new];
+    NSDateFormatter *dayFormatter = [NSDateFormatter new];
+    yearFormatter.dateFormat = @"yyyy";
+    monthFormatter.dateFormat = @"MM";
+    dayFormatter.dateFormat = @"dd";
+    
+    [self.picker selectRow:[[dayFormatter stringFromDate:today] integerValue] - 1 inComponent:0 animated:false];
+    [self.picker selectRow:[[monthFormatter stringFromDate:today] integerValue] - 1 inComponent:1 animated:false];
+    [self.picker selectRow:[[yearFormatter stringFromDate:today] integerValue] - 2000 inComponent:2 animated:false];
     
     UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 200, 80, 30)];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -74,6 +87,21 @@
 - (void)openMonthPicker:(UIButton *)sender {
     NSLog(@"Month");
     
+    [self.view removeFromSuperview];
+    
+    ModalOrdersList *orders = [[ModalOrdersList alloc] initWithDate:[self.picker selectedRowInComponent:2] + 2000 month:[self.picker selectedRowInComponent:1] + 1 day:[self.picker selectedRowInComponent:0] + 1 frame:self.controller.view.frame];
+    orders.dim = self.dim;
+    orders.calendarController = self.controller;
+    //year.calendar = self.calendar;
+    orders.view.frame = CGRectMake(self.controller.view.frame.size.width / 4 / 2, self.controller.view.frame.size.height / 4 / 2, self.controller.view.frame.size.width * 3 / 4, self.controller.view.frame.size.height * 3 / 4);
+    orders.view.layer.cornerRadius = 20.0;
+    [self.controller.view addSubview:orders.view];
+    [self.controller addChildViewController:orders];
+    
+    //[self.controller]
+    
+    //[self.dim.view removeFromSuperview];
+    
     /*[self.view removeFromSuperview];
     MonthPickerController *month = [MonthPickerController new];
     month.calendar = self.calendar;
@@ -85,7 +113,7 @@
 
 - (void)cancelAction:(UIButton *)sender {
     [self.view removeFromSuperview];
-    //[self.calendar.dim.view removeFromSuperview];
+    [self.dim.view removeFromSuperview];
 }
 
 @end

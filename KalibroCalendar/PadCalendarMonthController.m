@@ -62,7 +62,8 @@
     [self.controller.view addSubview:dim.view];
     
     PadDatePickerController *year = [PadDatePickerController new];
-    //year.calendar = self.calendar;
+    year.dim = dim;
+    year.controller = self.controller;
     year.view.frame = CGRectMake(self.controller.view.frame.size.width / 2 - 250, self.controller.view.frame.size.height / 2 - 125, 500, 250);
     year.view.layer.cornerRadius = 20.0;
     [self.controller.view addSubview:year.view];
