@@ -229,9 +229,23 @@
     [distance setText:@"Замерить потолки"];
     [cell.contentView addSubview:distance];
     
-    UIImageView *accept = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width * 3 / 4 - 320 + 187.5 * 3 / 4 / 4, 40, 187.5 * 3 / 4, 32.25 * 3 / 4)];
+    /*UIImageView *accept = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width * 3 / 4 - 320 + 187.5 * 3 / 4 / 4, 40, 187.5 * 3 / 4, 32.25 * 3 / 4)];
     [accept setImage:[UIImage imageNamed:@"accept.png"]];
-    [cell.contentView addSubview:accept];
+    [cell.contentView addSubview:accept];*/
+    
+    UIButton *accepted = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width * 3 / 4 - 320 + 187.5 * 3 / 4 / 4, 40, 187.5 * 3 / 4, 32.25 * 3 / 4)];
+    [accepted.titleLabel setFont:[UIFont fontWithName:@"SFProDisplay-Light" size:12]];
+    [accepted setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [accepted setTitle:@"ПРИНЯТ 21.11.2016 11:19" forState:UIControlStateNormal];
+    [accepted.layer setCornerRadius:12.5];
+    [accepted.layer setBorderWidth:1.0];
+    [accepted.layer setBorderColor:[[UIColor blackColor] CGColor]];
+    [cell.contentView addSubview:accepted];
+    //searchBar.layer.cornerRadius = 20.0
+    //searchBar.layer.borderWidth = 2.0
+    //searchBar.layer.borderColor = UIColor.white.cgColor
+    
+    //searchBar.font = UIFont(name: "HelveticaNeue-Thin", size: 12.0)
     
     return cell;
 }
