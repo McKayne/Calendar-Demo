@@ -32,6 +32,14 @@
     ordersList.delegate = self;
     [self.view addSubview:ordersList];
     
+    UIImageView *sortView = [[UIImageView alloc] initWithFrame:CGRectMake(75, self.frame.size.height * 3 / 4 - 75, 50, 50)];
+    sortView.image = [UIImage imageNamed:@"sort.png"];
+    [self.view addSubview:sortView];
+    
+    UIImageView *ascView = [[UIImageView alloc] initWithFrame:CGRectMake(currentWidth - 100, self.frame.size.height * 3 / 4 - 75, 50, 50)];
+    ascView.image = [UIImage imageNamed:@"asc.png"];
+    [self.view addSubview:ascView];
+    
     UIImageView *closeView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width * 3 / 4 - 100, 25, 50, 50)];
     closeView.image = [UIImage imageNamed:@"close.png"];
     [self.view addSubview:closeView];

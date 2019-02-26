@@ -27,6 +27,10 @@
     [super viewDidLoad];
     [self appendYearLabel];
     
+    UIImageView *refreshView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 75, 0, 50, 50)];
+    refreshView.image = [UIImage imageNamed:@"refresh.png"];
+    [self.view addSubview:refreshView];
+    
     self.monthPages = [[NSMutableArray alloc] initWithCapacity:51];
     srand(time(NULL));
     for (int i = 0; i <= 50; i++) {

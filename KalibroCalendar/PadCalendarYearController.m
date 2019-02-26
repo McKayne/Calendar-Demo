@@ -28,6 +28,10 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self appendYearLabel];
     
+    UIImageView *refreshView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 75, 0, 50, 50)];
+    refreshView.image = [UIImage imageNamed:@"refresh.png"];
+    [self.view addSubview:refreshView];
+    
     self.monthPages = [[NSMutableArray alloc] initWithCapacity:51];
     srand(time(NULL));
     for (int i = 0; i <= 50; i++) {
@@ -93,6 +97,7 @@
      attribute:NSLayoutAttributeBottomMargin
      multiplier:1.0
      constant:-(self.view.frame.size.height - 120.0)].active = YES;
+    
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {

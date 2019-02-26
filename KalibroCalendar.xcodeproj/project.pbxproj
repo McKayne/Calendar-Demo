@@ -45,6 +45,7 @@
 		7FE6B2A52224268B00C4CFA7 /* ModalOrdersList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A42224268B00C4CFA7 /* ModalOrdersList.m */; };
 		7FE6B2A822242D0F00C4CFA7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A722242D0F00C4CFA7 /* close.png */; };
 		7FE6B2AA2224444900C4CFA7 /* PadCalendarWeekDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE6B2A92224444900C4CFA7 /* PadCalendarWeekDay.m */; };
+		7FE6B2AD2225020D00C4CFA7 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE6B2AC2225020D00C4CFA7 /* refresh.png */; };
 		7FF74E0C2211DC4600350BD1 /* CustomOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +136,7 @@
 		7FE6B2A722242D0F00C4CFA7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = SOURCE_ROOT; };
 		7FE6B2A92224444900C4CFA7 /* PadCalendarWeekDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarWeekDay.m; sourceTree = "<group>"; };
 		7FE6B2AB2224445A00C4CFA7 /* PadCalendarWeekDay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PadCalendarWeekDay.h; sourceTree = "<group>"; };
+		7FE6B2AC2225020D00C4CFA7 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = SOURCE_ROOT; };
 		7FF74E0B2211DC4600350BD1 /* CustomOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomOrderCell.m; sourceTree = "<group>"; };
 		7FF74E0D2211DC5700350BD1 /* CustomOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOrderCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +233,7 @@
 				7FE6B29D2222DB4200C4CFA7 /* PadCalendarWeek.h */,
 				7F1E59EE222178990024FC56 /* PadCalendarYearController.h */,
 				7F1E59EF222178990024FC56 /* PadCalendarYearController.m */,
+				7FE6B2AC2225020D00C4CFA7 /* refresh.png */,
 				7FE6B2982222D68900C4CFA7 /* PadCalendarWeekController.m */,
 				7FE6B29A2222D69600C4CFA7 /* PadCalendarWeekController.h */,
 				7FE6B29E2222E25E00C4CFA7 /* PadCalendarDayController.m */,
@@ -390,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE6B2AD2225020D00C4CFA7 /* refresh.png in Resources */,
 				7F2D9E4121ED15F400AD7F94 /* LaunchScreen.storyboard in Resources */,
 				7F66887421ED892100DE3080 /* calendar.png in Resources */,
 				7F66889C21F1756F00DE3080 /* sort.png in Resources */,
