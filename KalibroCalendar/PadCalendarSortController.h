@@ -11,9 +11,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CalendarController.h"
+#import "ModalOrdersList.h"
 
 @interface PadCalendarSortController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
+@property (strong) ModalOrdersList *modal;
 @property int sortBy;
 @property (strong) CalendarController *controller;
 

@@ -30,6 +30,7 @@
     [self.calendarController.view addSubview:dim.view];
     
     PadCalendarSortController *asc = [PadCalendarSortController new];
+    asc.modal = self;
     //self.ascModal = asc;
     //asc.controller = self;
     asc.view.frame = CGRectMake(self.calendarController.view.frame.size.width / 2 - 125, self.calendarController.view.frame.size.height / 2 - 125, 250, 250);

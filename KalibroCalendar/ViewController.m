@@ -10,6 +10,9 @@
 #import "CalendarController.h"
 #import "PadCalendarController.h"
 
+#import "ModalTimeChooser.h"
+#import "ModalCalendarController.h"
+
 @interface ViewController ()
 
 @end
@@ -47,9 +50,26 @@
     //CalendarController *controller = [CalendarController new];
     //[self.navigationController pushViewController:controller animated:true];
     
-    PadCalendarController *calendar = [PadCalendarController new];
-    [self.navigationController pushViewController:calendar animated:true];
+    //PadCalendarController *calendar = [PadCalendarController new];
+    //[self.navigationController pushViewController:calendar animated:true];
 
+    UIViewController *dim = [UIViewController new];
+    [dim.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5f]];
+    [self.view addSubview:dim.view];
+    
+    /*ModalTimeChooser *time = [[ModalTimeChooser alloc] init];
+    time.frame = self.view.frame;
+    time.view.frame = CGRectMake(self.view.frame.size.width / 4 / 2, self.view.frame.size.height / 2 / 2, self.view.frame.size.width * 3 / 4, self.view.frame.size.height / 2);
+    time.view.layer.cornerRadius = 20.0;
+    [self.view addSubview:time.view];
+    [self addChildViewController:time];*/
+    
+    ModalCalendarController *calendar = [[ModalCalendarController alloc] init];
+    calendar.frame = self.view.frame;
+    calendar.view.frame = CGRectMake(self.view.frame.size.width / 4 / 2, self.view.frame.size.height / 2 / 2, self.view.frame.size.width * 3 / 4, self.view.frame.size.height / 2);
+    calendar.view.layer.cornerRadius = 20.0;
+    [self.view addSubview:calendar.view];
+    [self addChildViewController:calendar];
 }
 
 - (void)didReceiveMemoryWarning {
